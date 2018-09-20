@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: sample-ds-ondelete
+spec:
+  updateStrategy:
+    type: OnDelete
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:1.12

@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: sample-ipblock-ingress-networkpolicy
+  namespace: nptest
+spec:
+  podSelector:
+    matchLabels:
+      app: np4
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - ipBlock:
+        cidr: 10.12.1.16/32
+    ports:
+    - protocol: TCP
+      port: 80

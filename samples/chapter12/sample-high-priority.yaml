@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-high-priority
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.12
+  priorityClassName: sample-priority-class

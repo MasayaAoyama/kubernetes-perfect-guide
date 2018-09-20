@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-termination
+spec:
+  terminationGracePeriodSeconds: 30
+  containers:
+    - name: nginx-container
+      image: nginx:1.12
+      lifecycle:
+        preStop:
+          exec:
+            command: ["/bin/sh", "-c", "echo preStop!; sleep 20"]

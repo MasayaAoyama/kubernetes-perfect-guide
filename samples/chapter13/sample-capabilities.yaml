@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-capabilities
+spec:
+  containers:
+    - name: nginx-container
+      image: masayaaoyama/nginx:capsh
+      securityContext:
+        capabilities:
+          add: ["SYS_ADMIN"]
+          drop: ["AUDIT_WRITE"]

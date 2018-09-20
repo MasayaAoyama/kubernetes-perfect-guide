@@ -1,0 +1,57 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-pod-np1
+  namespace: default
+  labels:
+    app: np1
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.12-alpine
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-pod-np2
+  namespace: default
+  labels:
+    app: np2
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.12-alpine
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nptest
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-pod-np3
+  namespace: nptest
+  labels:
+    app: np3
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.12-alpine
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-pod-np4
+  namespace: nptest
+  labels:
+    app: np4
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.12-alpine

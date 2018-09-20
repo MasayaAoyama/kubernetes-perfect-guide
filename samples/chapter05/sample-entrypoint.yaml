@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-entrypoint
+spec:
+  containers:
+    - name: nginx-container-112
+      image: nginx:1.12
+      command: ["/bin/sleep"] # ENTRYPOINT命令に対応
+      args: ["3600"] # CMD命令に対応

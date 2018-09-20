@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-gitrepo
+spec:
+  containers:
+  - image: nginx:1.12
+    name: nginx-container
+    volumeMounts:
+    - mountPath: /srv
+      name: gitrepo-sample
+  volumes:
+  - name: gitrepo-sample
+    gitRepo:
+      repository: "https://github.com/kubernetes/kubectl.git"
+      # プライベートリポジトリの場合
+      # repository: "https://USERNAME:PASSWORD@github.com/ORG/private-repo.git"
+      revision: "master" # ブランチ、コミットハッシュ
+      directory: kubectl-repo # 未指定の場合はリポジトリ名

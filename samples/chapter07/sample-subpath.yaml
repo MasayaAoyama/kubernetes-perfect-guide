@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-subpath
+spec:
+    containers:
+    - name: container-a
+      image: alpine:3.7
+      command: ["sh", "-c", "touch /data/a.txt; sleep 86400"]
+      volumeMounts:
+      - mountPath: /data
+        name: main-volume
+    - name: container-b
+      image: alpine:3.7
+      command: ["sh", "-c", "touch /data/b.txt; sleep 86400"]
+      volumeMounts:
+      - mountPath: /data
+        name: main-volume
+        subPath: path1
+    - name: container-c
+      image: alpine:3.7
+      command: ["sh", "-c", "touch /data/c.txt; sleep 86400"]
+      volumeMounts:
+      - mountPath: /data
+        name: main-volume
+        subPath: path2
+    volumes:
+    - name: main-volume
+      emptyDir: {}

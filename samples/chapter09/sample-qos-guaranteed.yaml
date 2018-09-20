@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-qos-guaranteed
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.12
+      resources:
+        requests:
+          memory: "1024Mi"
+          cpu: "500m"
+        limits:
+          memory: "1024Mi"
+          cpu: "500m"

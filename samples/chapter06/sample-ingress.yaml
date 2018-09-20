@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sample-ingress
+spec:
+  rules:
+  - host: sample.example.com
+    http:
+      paths:
+      - path: /path1/*
+        backend:
+          serviceName: sample-ingress-svc-1
+          servicePort: 8888
+      - path: /path2/*
+        backend:
+          serviceName: sample-ingress-svc-2
+          servicePort: 8888
+  backend:
+    serviceName: sample-ingress-default
+    servicePort: 8888
+  tls:
+  - hosts:
+    - sample.example.com
+    secretName: tls-sample

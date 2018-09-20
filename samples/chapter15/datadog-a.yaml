@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dp1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: abtest
+  template:
+    metadata:
+      labels:
+        app: abtest
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:1.12
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ab-endpoint
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 80
+      targetPort: 80
+  selector:
+    app: abtest

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dp2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: abtest
+  template:
+    metadata:
+      labels:
+        app: abtest
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:1.13
+          ports:
+            - containerPort: 80

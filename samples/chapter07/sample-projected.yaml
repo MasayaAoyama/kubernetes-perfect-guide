@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-projected
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:1.12
+    volumeMounts:
+    - name: projected-volume
+      mountPath: /srv
+  volumes:
+  - name: projected-volume
+    projected:
+      sources:
+      - secret:
+          name: sample-db-auth
+          items:
+            - key: username
+              path: secret/username.txt
+      - configMap:
+          name: sample-configmap
+          items:
+            - key: nginx.conf
+              path: configmap/nginx.conf
+      - downwardAPI:
+          items:
+            - path: "podname"
+              fieldRef:
+                fieldPath: metadata.name

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-clusterip-vip
+spec:
+  type: ClusterIP
+  clusterIP: 10.11.253.81
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8080
+      targetPort: 80
+  selector:
+    app: sample-app

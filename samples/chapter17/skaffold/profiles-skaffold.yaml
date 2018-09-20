@@ -1,0 +1,32 @@
+apiVersion: skaffold/v1alpha2
+kind: Config
+build:
+  artifacts:
+  # ビルドしたDockerイメージの保存先とイメージ名
+  - imageName: DOCKERHUB_USER/skaffold-sample
+deploy:
+  kubectl:
+    # kubectl実行時に--contextオプションを渡してGKE環境を使う
+    # （未指定の場合は現在のContextを利用）
+    # flags:
+    #   global:
+    #     - --context=gke_PROJECT_asia-northeast1-a_CLUSTER
+    manifests:
+      # 適用するマニフェストのファイル名
+      - skaffold-*
+profiles:
+  # ローカルビルドでDockerイメージのプッシュをスキップし、
+  # Docker for Mac環境に開発用のマニフェストを使用するプロファイル
+  - name: devProfile
+    build:
+      local:
+        skipPush: true
+    deploy:
+      kubectl:
+        flags:
+          global:
+            # kubectl実行時に--contextオプションを渡して
+            # Docker for Macの環境を使う
+            - --context=docker-for-desktop
+        manifests:
+          - dev-skaffold-*

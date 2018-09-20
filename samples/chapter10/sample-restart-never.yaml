@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-restart-never
+spec:
+  restartPolicy: Never
+  containers:
+    - name: nginx-container
+      image: nginx:1.12
+      command: ["sh", "-c", "exit 0"] # 成功の場合
+#      command: ["sh", "-c", "exit 1"] # 失敗の場合

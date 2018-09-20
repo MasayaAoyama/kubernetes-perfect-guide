@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-matchexpressions-deployment
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+    - key: app
+      operator: In
+      values:
+      - sample-app
+      - sample-application
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:1.12

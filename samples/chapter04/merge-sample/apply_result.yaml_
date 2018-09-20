@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    key1: value1
+  name: sample-pod
+  namespace: default
+spec:
+  containers:
+  - image: nginx:1.13
+    name: nginx-container

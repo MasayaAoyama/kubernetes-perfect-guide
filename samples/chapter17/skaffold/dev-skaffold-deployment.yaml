@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-skaffold-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dev-skaffold-sample
+  template:
+    metadata:
+      labels:
+        app: dev-skaffold-sample
+    spec:
+      containers:
+        - name: nginx-container
+          image: DOCKERHUB_USER/skaffold-sample
+          ports:
+            - containerPort: 80

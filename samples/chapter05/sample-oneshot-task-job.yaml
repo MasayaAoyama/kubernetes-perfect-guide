@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sample-oneshot-task-job
+spec:
+  completions: 1
+  parallelism: 1
+  backoffLimit: 1
+  template:
+    metadata:
+      name: sleep-job
+    spec:
+      containers:
+      - name: sleep-container
+        image: centos:6
+        command: ["sleep"]
+        args: ["30"]
+      restartPolicy: Never

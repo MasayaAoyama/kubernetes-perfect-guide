@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: sample-resourcequota-count-old
+  namespace: default
+spec:
+  hard:
+    # 作成可能なリソースの数（旧方式）
+    # count/*の新方式では指定不可
+    sample-storageclass.storageclass.storage.k8s.io/persistentvolumeclaims: 10
+    services.loadbalancers: 10
+    services.nodeports: 10
+
+    # count/*の新方式でも指定可
+    pods: 10
+    persistentvolumeclaims: 10
+    replicationcontrollers: 10
+    secrets: 10
+    configmaps: 10
+    services: 10
+    resourcequotas: 10

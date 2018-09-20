@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-sysctl
+spec:
+  securityContext:
+    sysctls:
+    - name: net.core.somaxconn
+      value: "12345"
+  containers:
+    - name: centos-container
+      image: centos:7
+      command: ["/bin/sleep", "3600"]

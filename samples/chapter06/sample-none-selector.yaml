@@ -1,0 +1,23 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: sample-none-selector
+spec:
+  type: ClusterIP
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 80
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: sample-none-selector
+subsets:
+  - addresses:
+    - ip: 192.168.1.1
+    - ip: 192.168.1.2
+    ports:
+      - protocol: TCP
+        port: 80

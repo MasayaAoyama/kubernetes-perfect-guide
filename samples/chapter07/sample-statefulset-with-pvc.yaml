@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sample-statefulset-with-pvc
+spec:
+  serviceName: stateful-with-pvc
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sample-pvc
+  template:
+    metadata:
+      labels:
+        app: sample-pvc
+    spec:
+      containers:
+      - name: sample-pvc
+        image: nginx:1.12
+        volumeMounts:
+        - name: pvc-template-volume
+          mountPath: /tmp
+  volumeClaimTemplates:
+    - metadata:
+        name: pvc-template-volume
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10G
+        storageClassName: "sample-storageclass"

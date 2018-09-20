@@ -1,0 +1,81 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-ingress-svc-1
+spec:
+  type: NodePort
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8888
+      targetPort: 80
+  selector:
+    ingress-app: sample1
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-ingress-apps-1
+  labels:
+    ingress-app: sample1
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.12
+      ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-ingress-svc-2
+spec:
+  type: NodePort
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8888
+      targetPort: 80
+  selector:
+    ingress-app: sample2
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-ingress-apps-2
+  labels:
+    ingress-app: sample2
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.12
+      ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-ingress-default
+spec:
+  type: NodePort
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8888
+      targetPort: 80
+  selector:
+    ingress-app: default
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-ingress-default
+  labels:
+    ingress-app: default
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.12
+      ports:
+        - containerPort: 80

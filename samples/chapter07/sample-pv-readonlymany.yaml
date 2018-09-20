@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-pv-readonlymany
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:1.12
+          ports:
+            - containerPort: 80
+              name: "http"
+          volumeMounts:
+          - mountPath: "/usr/share/nginx/html"
+            name: nginx-pvc
+            # readOnly: true
+      volumes:
+        - name: nginx-pvc
+          persistentVolumeClaim:
+            claimName: sample-pvc
+            readOnly: true

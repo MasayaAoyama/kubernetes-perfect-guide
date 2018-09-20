@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: sample-namespaceselector-ingress-networkpolicy
+  namespace: nptest
+spec:
+  podSelector:
+    matchLabels:
+      app: np3
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          ns: default
+    ports:
+    - protocol: TCP
+      port: 80

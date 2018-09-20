@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: sample-rs-fail
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app-fail
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:1.12
+          ports:
+            - containerPort: 80

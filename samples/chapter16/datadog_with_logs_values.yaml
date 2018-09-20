@@ -1,0 +1,19 @@
+datadog:
+  apiKey: XXXXXXXXXXXXXXXXXXXXXXXX
+  tags: "project:sample,env:dev"
+  logsEnabled: true # 追加
+  logsConfigContainerCollectAll: true # 追加
+  autoconf:
+    kubernetes_state.yaml: |-
+      docker_images:
+        - kube-state-metrics
+      init_config:
+      instances:
+        - kube_state_url: http://%%host%%:%%port%%/metrics
+
+daemonset:
+  enabled: true
+
+kube-state-metrics:
+  rbac:
+    create: true

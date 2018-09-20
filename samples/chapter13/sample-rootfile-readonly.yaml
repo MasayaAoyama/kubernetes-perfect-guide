@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-rootfile-readonly
+spec:
+  containers:
+    - name: centos-container
+      image: centos:7
+      command: ["/bin/sleep", "3600"]
+      securityContext:
+        readOnlyRootFilesystem: true

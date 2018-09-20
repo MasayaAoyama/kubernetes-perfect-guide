@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sample-job-never-restart
+spec:
+  completions: 1
+  parallelism: 1
+  backoffLimit: 10
+  template:
+    spec:
+      containers:
+      - name: sleep-container
+        image: centos:6
+        command: ["sh", "-c"]
+        args: ["$(sleep 3600)"]
+      restartPolicy: Never

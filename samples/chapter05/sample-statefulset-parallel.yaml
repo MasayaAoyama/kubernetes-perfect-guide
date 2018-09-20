@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sample-statefulset-parallel
+spec:
+  podManagementPolicy: Parallel
+  serviceName: sample-statefulset-parallel
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:1.12

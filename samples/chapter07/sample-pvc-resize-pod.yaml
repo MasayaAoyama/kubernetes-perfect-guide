@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-pvc-resize-pod
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.12
+      ports:
+        - containerPort: 80
+          name: "http"
+      volumeMounts:
+      - mountPath: "/usr/share/nginx/html"
+        name: nginx-pvc
+  volumes:
+    - name: nginx-pvc
+      persistentVolumeClaim:
+       claimName: sample-pvc-resize

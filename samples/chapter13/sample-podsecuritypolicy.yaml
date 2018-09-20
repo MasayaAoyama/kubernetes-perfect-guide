@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: sample-podsecuritypolicy
+spec:
+  privileged: false
+  allowPrivilegeEscalation: true
+  allowedCapabilities:
+  - '*'
+  runAsUser:
+    rule: 'MustRunAsNonRoot'
+  allowedHostPaths:
+  - pathPrefix: "/etc"
+  fsGroup:
+    rule: 'RunAsAny'
+  supplementalGroups:
+    rule: 'RunAsAny'
+  seLinux:
+    rule: 'RunAsAny'
+  volumes:
+  - '*'

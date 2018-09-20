@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-configmap-multi-env
+spec:
+  containers:
+    - name: configmap-container
+      image: nginx:1.12
+      envFrom:
+      - configMapRef:
+          name: sample-configmap

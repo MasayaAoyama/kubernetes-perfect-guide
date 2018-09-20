@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-pod2
+  labels:
+    system: a
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.12

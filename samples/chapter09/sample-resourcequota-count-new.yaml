@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: sample-resourcequota-count-new
+  namespace: default
+spec:
+  hard:
+    # 作成可能なリソースの数（新方式）
+    count/persistentvolumeclaims: 10
+    count/services: 10
+    count/secrets: 10
+    count/configmaps: 10
+    count/replicationcontrollers: 10
+    count/deployments.apps: 10
+    count/replicasets.apps: 10
+    count/statefulsets.apps: 10
+    count/jobs.batch: 10
+    count/cronjobs.batch: 10
+    count/deployments.extensions: 10

@@ -1,0 +1,18 @@
+apiVersion: settings.k8s.io/v1alpha1
+kind: PodPreset
+metadata:
+  name: sample-podpreset
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: podpreset
+  env:
+    - name: SAMPLE_ENV
+      value: "SAMPLE_VALUE"
+  volumeMounts:
+    - mountPath: /cache
+      name: cache-volume
+  volumes:
+    - name: cache-volume
+      emptyDir: {}

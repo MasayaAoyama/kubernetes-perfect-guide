@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: sample-limitrange-pvc
+  namespace: default
+spec:
+  limits:
+  - type: PersistentVolumeClaim
+    max:
+      storage: 10Gi
+    min:
+      storage: 3Gi

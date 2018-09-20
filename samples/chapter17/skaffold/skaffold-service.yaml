@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: skaffold-service
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 80
+      targetPort: 8080
+  selector:
+    app: skaffold-sample

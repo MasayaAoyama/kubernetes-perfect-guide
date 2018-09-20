@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-lb-fixip
+spec:
+  type: LoadBalancer
+  loadBalancerIP: xxx.xxx.xxx.xxx
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8080
+      targetPort: 80
+  selector:
+    app: sample-app

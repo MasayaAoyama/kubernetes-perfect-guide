@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: sample-resourcequota
+  namespace: default
+spec:
+  hard:
+    # 作成可能なリソースの数
+    count/configmaps: 10
