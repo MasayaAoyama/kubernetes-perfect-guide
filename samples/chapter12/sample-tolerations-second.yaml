@@ -6,9 +6,9 @@ spec:
   containers:
     - name: nginx-container
       image: nginx:1.12
-tolerations:
-- key: "env"
-  operator: "Equal"
-  value: "prd"
-  effect: "NoExecute"
-  tolerationSeconds: 45
+  tolerations:
+  - key: "env"
+    operator: "Equal"
+    value: "prd"
+    effect: "NoExecute"
+    tolerationSeconds: 45
