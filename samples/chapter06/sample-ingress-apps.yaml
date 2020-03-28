@@ -22,7 +22,7 @@ metadata:
 spec:
   containers:
     - name: nginx-container
-      image: nginx:1.12
+      image: nginx:1.16
       ports:
         - containerPort: 80
 ---
@@ -49,7 +49,7 @@ metadata:
 spec:
   containers:
     - name: nginx-container
-      image: nginx:1.12
+      image: nginx:1.16
       ports:
         - containerPort: 80
 ---
@@ -76,6 +76,6 @@ metadata:
 spec:
   containers:
     - name: nginx-container
-      image: nginx:1.12
+      image: nginx:1.16
       ports:
         - containerPort: 80

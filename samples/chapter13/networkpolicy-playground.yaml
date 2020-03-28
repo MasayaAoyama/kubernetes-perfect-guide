@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
     - name: nginx-container
-      image: nginx:1.12-alpine
+      image: nginx:1.16-alpine
 
 ---
 apiVersion: v1
@@ -22,7 +22,7 @@ metadata:
 spec:
   containers:
     - name: nginx-container
-      image: nginx:1.12-alpine
+      image: nginx:1.16-alpine
 
 ---
 apiVersion: v1
@@ -41,7 +41,7 @@ metadata:
 spec:
   containers:
     - name: nginx-container
-      image: nginx:1.12-alpine
+      image: nginx:1.16-alpine
 
 ---
 apiVersion: v1
@@ -54,4 +54,4 @@ metadata:
 spec:
   containers:
     - name: nginx-container
-      image: nginx:1.12-alpine
+      image: nginx:1.16-alpine

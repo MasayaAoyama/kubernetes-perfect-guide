@@ -7,5 +7,5 @@ metadata:
   namespace: default
 spec:
   containers:
-  - image: nginx:1.13
+  - image: nginx:1.17
     name: nginx-container

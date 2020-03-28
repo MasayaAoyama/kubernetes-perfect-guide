@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: sample-pvc
-        image: nginx:1.12
+        image: nginx:1.16
         volumeMounts:
         - name: pvc-template-volume
           mountPath: /tmp

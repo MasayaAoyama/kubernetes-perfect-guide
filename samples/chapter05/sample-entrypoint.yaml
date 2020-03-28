@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
     - name: nginx-container-112
-      image: nginx:1.12
+      image: nginx:1.16
       command: ["/bin/sleep"] # ENTRYPOINT命令に対応
       args: ["3600"] # CMD命令に対応
