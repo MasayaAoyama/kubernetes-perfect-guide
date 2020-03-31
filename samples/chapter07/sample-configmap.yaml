@@ -15,3 +15,7 @@ data:
     worker_processes auto;
     error_log /var/log/nginx/error.log;
     pid /run/nginx.pid;
+  test.sh: |
+    #!/bin/bash
+    echo "Hello, kubernetes"
+    sleep infinity
