@@ -10,5 +10,5 @@ spec:
     - 1001
     - 1002
   containers:
-    - name: centos-container
+    - name: tools-container
       image: amsy810/tools:latest

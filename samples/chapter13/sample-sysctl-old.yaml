@@ -14,5 +14,5 @@ spec:
     securityContext:
       privileged: true
   containers:
-    - name: centos-container
+    - name: tools-container
       image: amsy810/tools:latest

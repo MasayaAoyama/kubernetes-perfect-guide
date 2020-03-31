@@ -8,5 +8,5 @@ spec:
     - name: net.core.somaxconn
       value: "12345"
   containers:
-    - name: centos-container
+    - name: tools-container
       image: amsy810/tools:latest
