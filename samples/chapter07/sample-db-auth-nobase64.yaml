@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sample-db-auth-nobase64
+type: Opaque
+stringData:
+  username: root
+  password: rootpassword
