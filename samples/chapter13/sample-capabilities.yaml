@@ -4,8 +4,8 @@ metadata:
   name: sample-capabilities
 spec:
   containers:
-    - name: nginx-container
-      image: masayaaoyama/nginx:capsh
+    - name: tools-container
+      image: amsy810/tools:latest
       securityContext:
         capabilities:
           add: ["SYS_ADMIN"]
