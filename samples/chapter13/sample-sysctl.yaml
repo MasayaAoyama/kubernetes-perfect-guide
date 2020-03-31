@@ -9,5 +9,4 @@ spec:
       value: "12345"
   containers:
     - name: centos-container
-      image: centos:7
-      command: ["/bin/sleep", "3600"]
+      image: amsy810/tools:latest

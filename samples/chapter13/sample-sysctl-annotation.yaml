@@ -8,5 +8,4 @@ metadata:
 spec:
   containers:
     - name: centos-container
-      image: centos:7
-      command: ["/bin/sleep", "3600"]
+      image: amsy810/tools:latest
