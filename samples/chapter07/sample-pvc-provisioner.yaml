@@ -2,9 +2,8 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: sample-pvc-provisioner
-  annotations:
-    volume.beta.kubernetes.io/storage-class: sample-storageclass
 spec:
+  storageClassName: sample-storageclass
   accessModes:
     - ReadWriteOnce
   resources:
