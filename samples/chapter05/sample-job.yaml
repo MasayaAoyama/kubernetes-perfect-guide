@@ -9,7 +9,7 @@ spec:
   template:
     spec:
       containers:
-      - name: sleep-container
+      - name: tools-container
         image: amsy810/tools:latest
         command: ["sleep"]
         args: ["60"]
