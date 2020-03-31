@@ -15,5 +15,3 @@ spec:
       containers:
         - name: nginx-container
           image: DOCKERHUB_USER/skaffold-sample
-          ports:
-            - containerPort: 8080

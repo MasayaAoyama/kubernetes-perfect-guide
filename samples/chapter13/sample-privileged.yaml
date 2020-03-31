@@ -6,7 +6,5 @@ spec:
   containers:
     - name: nginx-container
       image: nginx:1.16
-      ports:
-      - containerPort: 80
       securityContext:
         privileged: true
