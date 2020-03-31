@@ -4,7 +4,7 @@ metadata:
   name: sample-annotation
   annotations:
     annotation1: val1
-    annotation2: val2
+    annotation2: "200"
 spec:
   containers:
     - name: nginx-container
