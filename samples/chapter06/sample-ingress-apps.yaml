@@ -22,7 +22,7 @@ metadata:
 spec:
   containers:
     - name: nginx-container
-      image: nginx:1.16
+      image: amsy810/echo-nginx:latest
 ---
 apiVersion: v1
 kind: Service
@@ -47,7 +47,7 @@ metadata:
 spec:
   containers:
     - name: nginx-container
-      image: nginx:1.16
+      image: amsy810/echo-nginx:latest
 ---
 apiVersion: v1
 kind: Service
@@ -72,4 +72,4 @@ metadata:
 spec:
   containers:
     - name: nginx-container
-      image: nginx:1.16
+      image: amsy810/echo-nginx:latest

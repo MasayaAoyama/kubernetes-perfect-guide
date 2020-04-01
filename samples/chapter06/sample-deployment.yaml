@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: nginx-container
-          image: nginx:1.16
+          image: amsy810/echo-nginx:latest
