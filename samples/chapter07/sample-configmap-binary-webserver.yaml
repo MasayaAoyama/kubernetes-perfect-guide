@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-configmap-binary-webserver
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.16
+      volumeMounts:
+      - name: config-volume
+        mountPath: /usr/share/nginx/html
+  volumes:
+    - name: config-volume
+      configMap:
+        name: sample-configmap-binary
