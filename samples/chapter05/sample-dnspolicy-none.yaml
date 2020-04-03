@@ -1,12 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: sample-externaldns
+  name: sample-dnspolicy-none
 spec:
-  containers:
-    - name: nginx-container
-      image: nginx:1.16
-  dnsPolicy: "None"
+  dnsPolicy: None
   dnsConfig:
     nameservers:
       - 8.8.8.8
@@ -16,3 +13,7 @@ spec:
     options:
       - name: ndots
         value: "5"
+  containers:
+    - name: nginx-container
+      image: nginx:1.16
+
