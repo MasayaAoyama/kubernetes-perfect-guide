@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sample-job-ttl
+spec:
+  ttlSecondsAfterFinished: 30
+  completions: 1
+  parallelism: 1
+  backoffLimit: 10
+  template:
+    spec:
+      containers:
+      - name: tools-container
+        image: amsy810/tools:latest
+        command: ["sleep"]
+        args: ["60"]
+      restartPolicy: Never
