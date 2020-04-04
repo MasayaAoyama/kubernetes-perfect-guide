@@ -1,0 +1,62 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+kubeadmConfigPatches:
+- |
+  apiVersion: kubeadm.k8s.io/v1beta2
+  kind: ClusterConfiguration
+  metadata:
+    name: config
+  apiServer:
+    extraArgs:
+      "feature-gates": "StartupProbe=true,DryRun=true,EndpointSlice=true,EphemeralContainers=true,EvenPodsSpread=true,HPAScaleToZero=true,NodeLease=true,StreamingProxyRedirects=true,TTLAfterFinished=true,WatchBookmark=true,ServiceTopology=true,IPv6DualStack=true,ImmutableEphemeralVolumes=true"
+  scheduler:
+    extraArgs:
+      "feature-gates": "StartupProbe=true,DryRun=true,EndpointSlice=true,EphemeralContainers=true,EvenPodsSpread=true,HPAScaleToZero=true,NodeLease=true,StreamingProxyRedirects=true,TTLAfterFinished=true,WatchBookmark=true,ServiceTopology=true,IPv6DualStack=true"
+  controllerManager:
+    extraArgs:
+      "feature-gates": "HPAScaleToZero=true,TTLAfterFinished=true,EndpointSlice=true,ImmutableEphemeralVolumes=true"
+- |
+  apiVersion: kubelet.config.k8s.io/v1beta1
+  kind: KubeletConfiguration
+  featureGates:
+    StartupProbe: true
+    DryRun: true
+    EndpointSlice: true
+    EphemeralContainers: true
+    EvenPodsSpread: true
+    HPAScaleToZero: true
+    NodeLease: true
+    StreamingProxyRedirects: true
+    TTLAfterFinished: true
+    WatchBookmark: true
+    ServiceTopology: true
+    IPv6DualStack: true
+- |
+  apiVersion: kubeproxy.config.k8s.io/v1alpha1
+  kind: KubeProxyConfiguration
+  featureGates:
+    StartupProbe: true
+    DryRun: true
+    EndpointSlice: true
+    EphemeralContainers: true
+    EvenPodsSpread: true
+    HPAScaleToZero: true
+    NodeLease: true
+    StreamingProxyRedirects: true
+    TTLAfterFinished: true
+    WatchBookmark: true
+    ServiceTopology: true
+    IPv6DualStack: true
+nodes:
+- role: control-plane
+  image: kindest/node:v1.18.0
+- role: control-plane
+  image: kindest/node:v1.18.0
+- role: control-plane
+  image: kindest/node:v1.18.0
+- role: worker
+  image: kindest/node:v1.18.0
+- role: worker
+  image: kindest/node:v1.18.0
+- role: worker
+  image: kindest/node:v1.18.0
