@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-startup-shortfail
+spec:
+  containers:
+    - name: tools-container
+      image: amsy810/tools:latest
+      readinessProbe:
+        exec:
+          command: ["sh", "-c", "echo [$(date)] readiness >> /root/log; test ! -e /root/readiness"]
+        periodSeconds: 3
+      startupProbe:
+        exec:
+          command: ["sh", "-c", "echo [$(date)] startup >> /root/log; test -e /root/startup"]
+        failureThreshold: 3
+        initialDelaySeconds: 5
+        periodSeconds: 3
+
