@@ -1,6 +1,6 @@
 ---
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: sample-none-selector
 spec:
@@ -10,8 +10,8 @@ spec:
     port: 8080
     targetPort: 80
 ---
-kind: Endpoints
 apiVersion: v1
+kind: Endpoints
 metadata:
   name: sample-none-selector
 subsets:
