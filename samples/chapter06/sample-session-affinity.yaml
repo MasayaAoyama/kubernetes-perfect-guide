@@ -11,7 +11,7 @@ spec:
     protocol: TCP
     port: 8080
     targetPort: 80
-    nodePort: 30083
+    nodePort: 30084
   sessionAffinity: ClientIP
   sessionAffinityConfig:
     clientIP:

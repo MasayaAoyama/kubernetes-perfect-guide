@@ -16,4 +16,3 @@ spec:
         failureThreshold: 3
         initialDelaySeconds: 5
         periodSeconds: 3
-

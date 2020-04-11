@@ -8,54 +8,42 @@ kubeadmConfigPatches:
     name: config
   apiServer:
     extraArgs:
-      "feature-gates": "StartupProbe=true,DryRun=true,EndpointSlice=true,EphemeralContainers=true,EvenPodsSpread=true,HPAScaleToZero=true,NodeLease=true,StreamingProxyRedirects=true,TTLAfterFinished=true,WatchBookmark=true,ServiceTopology=true,IPv6DualStack=true,ImmutableEphemeralVolumes=true"
+      "feature-gates": "EphemeralContainers=true,HPAScaleToZero=true,TTLAfterFinished=true,ServiceTopology=true,ImmutableEphemeralVolumes=true"
   scheduler:
     extraArgs:
-      "feature-gates": "DryRun=true,EndpointSlice=true,EphemeralContainers=true,EvenPodsSpread=true,HPAScaleToZero=true,NodeLease=true,StreamingProxyRedirects=true,TTLAfterFinished=true,WatchBookmark=true,ServiceTopology=true,IPv6DualStack=true"
+      "feature-gates": "EphemeralContainers=true,HPAScaleToZero=true,TTLAfterFinished=true,ServiceTopology=true"
   controllerManager:
     extraArgs:
-      "feature-gates": "HPAScaleToZero=true,TTLAfterFinished=true,EndpointSlice=true,ImmutableEphemeralVolumes=true"
+      "feature-gates": "HPAScaleToZero=true,TTLAfterFinished=true,ImmutableEphemeralVolumes=true"
 - |
   apiVersion: kubelet.config.k8s.io/v1beta1
   kind: KubeletConfiguration
   featureGates:
-    StartupProbe: true
-    DryRun: true
-    EndpointSlice: true
     EphemeralContainers: true
-    EvenPodsSpread: true
     HPAScaleToZero: true
-    NodeLease: true
-    StreamingProxyRedirects: true
     TTLAfterFinished: true
-    WatchBookmark: true
     ServiceTopology: true
-    IPv6DualStack: true
 - |
   apiVersion: kubeproxy.config.k8s.io/v1alpha1
   kind: KubeProxyConfiguration
   featureGates:
-    DryRun: true
-    EndpointSlice: true
     EphemeralContainers: true
-    EvenPodsSpread: true
     HPAScaleToZero: true
-    NodeLease: true
-    StreamingProxyRedirects: true
     TTLAfterFinished: true
-    WatchBookmark: true
     ServiceTopology: true
-    IPv6DualStack: true
+    EndpointSliceProxying: true
 nodes:
 - role: control-plane
-  image: kindest/node:v1.18.0
+  image: amsy810/kind-node:v1.18.1
 - role: control-plane
-  image: kindest/node:v1.18.0
+  image: amsy810/kind-node:v1.18.1
 - role: control-plane
-  image: kindest/node:v1.18.0
+  image: amsy810/kind-node:v1.18.1
 - role: worker
-  image: kindest/node:v1.18.0
+  image: amsy810/kind-node:v1.18.1
 - role: worker
-  image: kindest/node:v1.18.0
+  image: amsy810/kind-node:v1.18.1
 - role: worker
-  image: kindest/node:v1.18.0
+  image: amsy810/kind-node:v1.18.1
+- role: worker
+  image: amsy810/kind-node:v1.18.1
