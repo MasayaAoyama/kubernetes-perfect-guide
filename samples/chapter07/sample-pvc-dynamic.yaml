@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sample-pvc-provisioner
+  name: sample-pvc-dynamic
 spec:
   storageClassName: sample-storageclass
   accessModes:

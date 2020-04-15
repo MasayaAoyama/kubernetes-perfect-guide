@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: sample-pvc-provisioner-pod
+  name: sample-pvc-dynamic-pod
 spec:
   containers:
     - name: nginx-container
@@ -12,4 +12,4 @@ spec:
   volumes:
     - name: nginx-pvc
       persistentVolumeClaim:
-       claimName: sample-pvc-provisioner
+       claimName: sample-pvc-dynamic
