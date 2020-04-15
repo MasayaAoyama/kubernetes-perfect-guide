@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-pvc-block-pod
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.16
+      volumeDevices:
+      - devicePath: /dev/sample-block
+        name: nginx-pvc
+  volumes:
+    - name: nginx-pvc
+      persistentVolumeClaim:
+       claimName: sample-pvc-block
