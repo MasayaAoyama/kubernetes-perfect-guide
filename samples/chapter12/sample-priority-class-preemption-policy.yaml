@@ -1,0 +1,8 @@
+apiVersion: scheduling.k8s.io/v1alpha1
+kind: PriorityClass
+metadata:
+  name: sample-priority-class-preemption-policy
+value: 100
+globalDefault: false
+description: "used for serviceA only"
+preemptionPolicy: Never

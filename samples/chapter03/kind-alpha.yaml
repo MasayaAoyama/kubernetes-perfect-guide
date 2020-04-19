@@ -11,7 +11,7 @@ kubeadmConfigPatches:
       "feature-gates": "EphemeralContainers=true,HPAScaleToZero=true,TTLAfterFinished=true,ServiceTopology=true,ImmutableEphemeralVolumes=true"
   scheduler:
     extraArgs:
-      "feature-gates": "EphemeralContainers=true,HPAScaleToZero=true,TTLAfterFinished=true,ServiceTopology=true"
+      "feature-gates": "EphemeralContainers=true,HPAScaleToZero=true,TTLAfterFinished=true,ServiceTopology=true,NonPreemptingPriority=true"
   controllerManager:
     extraArgs:
       "feature-gates": "HPAScaleToZero=true,TTLAfterFinished=true,ImmutableEphemeralVolumes=true"
