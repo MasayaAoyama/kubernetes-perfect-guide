@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-pvc-wait-pod
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:1.16
+      volumeMounts:
+      - mountPath: "/usr/share/nginx/html"
+        name: nginx-pvc
+  volumes:
+    - name: nginx-pvc
+      persistentVolumeClaim:
+       claimName: sample-pvc-wait
