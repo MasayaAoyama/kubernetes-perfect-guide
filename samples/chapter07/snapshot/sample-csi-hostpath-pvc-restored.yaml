@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sample-csi-hostpath-pvc-restored
+spec:
+  storageClassName: sample-csi-hostpath-storageclass
+  dataSource:
+    name: sample-csi-hostpath-volumesnapshot
+    kind: VolumeSnapshot
+    apiGroup: snapshot.storage.k8s.io
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
