@@ -5,6 +5,7 @@ metadata:
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Local
+  healthCheckNodePort: 30086
   ports:
     - name: "http-port"
       protocol: "TCP"
