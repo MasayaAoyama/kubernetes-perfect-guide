@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-deployment-servicelinks
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      enableServiceLinks: false
+      containers:
+        - name: nginx-container
+          image: amsy810/echo-nginx:latest
