@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-deployment-readinessgate
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      readinessGates:
+        - conditionType: "amsy.dev/sample-condition"
+      containers:
+        - name: nginx-container
+          image: nginx:1.16

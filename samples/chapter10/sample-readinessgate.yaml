@@ -1,0 +1,27 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-readinessgate
+  labels:
+    app: sample-readinessgate
+spec:
+  readinessGates:
+    - conditionType: "amsy.dev/sample-condition"
+  containers:
+    - name: nginx-container
+      image: nginx:1.16
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-readinessgate
+spec:
+  type: ClusterIP
+  ports:
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8080
+      targetPort: 80
+  selector:
+    app: sample-readinessgate
