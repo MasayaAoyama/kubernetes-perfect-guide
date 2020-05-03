@@ -1,0 +1,53 @@
+---
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: sample-vpa
+spec:
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sample-vpa-deployment
+  updatePolicy:
+    updateMode: Auto # Requests更新時にPodの再作成を行う
+  resourcePolicy:
+    containerPolicies:
+      - containerName: no-vpa-container
+        mode: "Off" # オートスケール対象外
+      - containerName: "*" # 指定していない残りすべてのコンテナ
+        mode: Auto # オートスケール対象
+        minAllowed:
+          memory: 300Mi
+        maxAllowed:
+          memory: 1000Mi
+        controlledResources: ["cpu", "memory"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-vpa-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+        - name: vpa-container
+          image: amsy810/tools:latest
+          resources:
+            requests:
+              cpu: 300m
+              memory: 300Mi
+        - name: no-vpa-container
+          image: amsy810/tools:latest
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+
+
