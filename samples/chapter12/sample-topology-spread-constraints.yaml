@@ -1,21 +1,30 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: sample-topology-spread-constraints
 spec:
-  topologySpreadConstraints:
-    - topologyKey: kuberntes.io/hostname
-      labelSelector:
-        matchLabels:
-          app: sample-app
-      maxSkew: 2
-      whenUnsatisfiable: DoNotSchedule
-    - topologyKey: failuredomain.kuberntes.io/zone
-      labelSelector:
-        matchLabels:
-          app: sample-app
-      maxSkew: 1
-      whenUnsatisfiable: DoNotSchedule
-  containers:
-    - name: nginx-container
-      image: nginx:1.16
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      topologySpreadConstraints:
+        - topologyKey: kuberntes.io/hostname
+          labelSelector:
+            matchLabels:
+              app: sample-app
+          maxSkew: 2
+          whenUnsatisfiable: DoNotSchedule
+        - topologyKey: failuredomain.kuberntes.io/zone
+          labelSelector:
+            matchLabels:
+              app: sample-app
+          maxSkew: 1
+          whenUnsatisfiable: DoNotSchedule
+      containers:
+        - name: nginx-container
+          image: nginx:1.16
