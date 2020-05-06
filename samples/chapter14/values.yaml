@@ -1,2 +1,5 @@
-datadog:
-  apiKey: XXXXXXXXXXXXX
+wordpressUsername: sample-user
+wordpressPassword: sample-pass
+wordpressBlogName: "Sample BLOG"
+persistence:
+  size: 5Gi
