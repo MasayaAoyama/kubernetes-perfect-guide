@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: sample-role
+  namespace: default
+rules:
+- apiGroups:
+  - apps
+  - extensions
+  resources:
+  - replicasets
+  - deployments
+  - deployments/scale
+  verbs:
+  - "*"

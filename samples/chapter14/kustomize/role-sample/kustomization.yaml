@@ -1,0 +1,5 @@
+namespace: sample-namespace
+resources:
+  - sample-rolebinding.yaml
+  - sample-role.yaml
+  - sample-serviceaccount.yaml

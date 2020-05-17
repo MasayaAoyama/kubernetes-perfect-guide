@@ -1,0 +1,7 @@
+imageTags:
+  - name: nginx
+    newName: amsy810/echo-nginx
+    newTag: latest
+resources:
+  - sample-deployment.yaml
+  - sample-lb.yaml

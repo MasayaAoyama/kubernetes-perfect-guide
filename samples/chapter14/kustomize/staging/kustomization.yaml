@@ -1,0 +1,7 @@
+bases:
+  - ../resources-sample/
+patches:
+  - ./patch-replicas.yaml
+imageTags:
+  - name: nginx
+    newTag: staging

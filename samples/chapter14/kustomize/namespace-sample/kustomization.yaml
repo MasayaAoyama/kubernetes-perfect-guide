@@ -1,0 +1,4 @@
+namespace: sample-namespace
+resources:
+  - sample-deployment.yaml
+  - sample-lb.yaml
