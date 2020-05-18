@@ -5,15 +5,18 @@ metadata:
   namespace: argocd
 spec:
   project: default
+  # 適用するマニフェスト
   source:
     repoURL: https://github.com/MasayaAoyama/kubernetes-perfect-guide.git
     targetRevision: 2nd-edition
     path: samples/chapter17/argocd/manifests
     directory:
       recurse: true
+  # 適用先（デフォルトは自分自身のクラスタ）
   destination:
     server: https://kubernetes.default.svc
     namespace: default
+  # 同期に関する設定
   syncPolicy:
     automated:
       prune: true
