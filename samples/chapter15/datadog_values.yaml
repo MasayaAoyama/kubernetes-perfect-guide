@@ -11,6 +11,3 @@ datadog:
     processCollection: true
   collectEvents: true
   leaderElection: true
-  logs: # 追加
-    enabled: true # 追加
-    configContainerCollectAll: true # 追加

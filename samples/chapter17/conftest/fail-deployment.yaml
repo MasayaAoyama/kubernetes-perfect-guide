@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fail-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      role: fail-app
+  template:
+    metadata:
+      labels:
+        role: fail-app
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:1.16

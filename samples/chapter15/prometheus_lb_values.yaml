@@ -1,9 +1,0 @@
-alertmanager:
-  service:
-    type: LoadBalancer
-pushgateway:
-  service:
-    type: LoadBalancer
-server:
-  service:
-    type: LoadBalancer

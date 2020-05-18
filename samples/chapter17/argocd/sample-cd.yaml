@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-cd
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/MasayaAoyama/kubernetes-perfect-guide.git
+    targetRevision: 2nd-edition
+    path: samples/chapter17/argocd/manifests
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

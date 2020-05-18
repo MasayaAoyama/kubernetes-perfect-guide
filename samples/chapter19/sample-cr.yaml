@@ -1,0 +1,7 @@
+apiVersion: stable.example.com/v1
+kind: Database
+metadata:
+  name: my-mysql
+spec:
+  dbType: mysql
+  diskSize: 100
