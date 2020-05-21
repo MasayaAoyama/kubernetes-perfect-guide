@@ -1,11 +1,15 @@
-apiVersion: skaffold/v1alpha2
+apiVersion: skaffold/v2alpha3
 kind: Config
 build:
-  artifacts:
   # ビルドしたDockerイメージの保存先とイメージ名
-  - imageName: DOCKERHUB_USER/skaffold-sample
+  artifacts:
+  - image: DOCKERHUB_USER/skaffold-sample
+    docker:
+      dockerfile: ./Dockerfile
+  tagPolicy:
+    gitCommit: {}
   local:
-    skipPush: true
+    push: false # イメージのプッシュを行わない
 deploy:
   kubectl:
     manifests:
