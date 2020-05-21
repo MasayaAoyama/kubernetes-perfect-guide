@@ -13,4 +13,5 @@ datadog:
   leaderElection: true
   logs: # 追加
     enabled: true # 追加
+    containerCollectAll: true # 追加
     configContainerCollectAll: true # 追加
