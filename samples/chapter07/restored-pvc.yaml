@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: restored-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: sample-csi-storageclass
+  resources:
+    requests:
+      storage: 3Gi
+  dataSource:
+    kind: VolumeSnapshot
+    name: source-pvc-snapshot
+    apiGroup: snapshot.storage.k8s.io

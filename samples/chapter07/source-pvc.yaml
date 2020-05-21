@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: sample-csi-hostpath-pvc
+  name: source-pvc
 spec:
-  storageClassName: sample-csi-hostpath-storageclass
   accessModes:
     - ReadWriteOnce
+  storageClassName: sample-csi-storageclass
   resources:
     requests:
       storage: 1Gi

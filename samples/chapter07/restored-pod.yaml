@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: restored-pod
+spec:
+  containers:
+  - name: tools-container
+    image: amsy810/tools
+    volumeMounts:
+    - name: data-volume
+      mountPath: /data
+  volumes:
+  - name: data-volume
+    persistentVolumeClaim:
+      claimName: restored-pvc
+      readOnly: false

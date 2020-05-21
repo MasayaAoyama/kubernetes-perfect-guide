@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: source-pod
+spec:
+  containers:
+  - name: tools-container
+    image: amsy810/tools
+    command: ["/bin/sh", "-c"]
+    args: ["date > /data/time.txt && sleep infinity"]
+    volumeMounts:
+    - name: data-volume
+      mountPath: /data
+  volumes:
+  - name: data-volume
+    persistentVolumeClaim:
+      claimName: source-pvc
+      readOnly: false
