@@ -16,7 +16,7 @@ deploy:
       - skaffold-*
 profiles:
   # ローカルビルドでDockerイメージのプッシュをスキップし、
-  # Docker for Mac環境に開発用のマニフェストを使用するプロファイル
+  # Docker Desktop for Mac／Windows環境に開発用のマニフェストを使用するプロファイル
   - name: devProfile
     build:
       local:
@@ -26,7 +26,7 @@ profiles:
         flags:
           global:
             # kubectl実行時に--contextオプションを渡して
-            # Docker for Macの環境を使う
+            # Docker Desktop for Mac／Windowsの環境を使う
             - --context=docker-for-desktop
         manifests:
           - dev-skaffold-*
