@@ -15,7 +15,7 @@ profiles:
     local:
       push: true # イメージのプッシュを行う
   deploy:
-    kubeContext: gke_cyberagent-001_asia-northeast1-b_k8s
+    kubeContext: gke_PROJECT_asia-northeast1-a_k8s
     kubectl:
       manifests:
         # 適用するマニフェストのファイル名
