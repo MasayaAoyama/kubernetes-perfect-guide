@@ -13,13 +13,13 @@ spec:
         app: sample-app
     spec:
       topologySpreadConstraints:
-        - topologyKey: kuberntes.io/hostname
+        - topologyKey: kubernetes.io/hostname
           labelSelector:
             matchLabels:
               app: sample-app
           maxSkew: 2
           whenUnsatisfiable: DoNotSchedule
-        - topologyKey: failuredomain.kuberntes.io/zone
+        - topologyKey: topology.kubernetes.io/zone
           labelSelector:
             matchLabels:
               app: sample-app
