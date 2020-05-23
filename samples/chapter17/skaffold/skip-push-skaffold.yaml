@@ -3,7 +3,7 @@ kind: Config
 build:
   # ビルドしたDockerイメージの保存先とイメージ名
   artifacts:
-  - image: amsy810/sample-skaffold
+  - image: DOCKERHUB_USER/sample-skaffold
     docker:
       dockerfile: ./Dockerfile
   tagPolicy:
