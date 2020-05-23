@@ -6,12 +6,12 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: skaffold-sample
+      app: sample-skaffold
   template:
     metadata:
       labels:
-        app: skaffold-sample
+        app: sample-skaffold
     spec:
       containers:
         - name: nginx-container
-          image: DOCKERHUB_USER/skaffold-sample
+          image: amsy810/sample-skaffold

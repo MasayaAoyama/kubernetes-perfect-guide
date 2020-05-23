@@ -1,32 +1,33 @@
-apiVersion: skaffold/v1alpha2
+apiVersion: skaffold/v2alpha3
 kind: Config
 build:
-  artifacts:
   # ビルドしたDockerイメージの保存先とイメージ名
-  - imageName: DOCKERHUB_USER/skaffold-sample
-deploy:
-  kubectl:
-    # kubectl実行時に--contextオプションを渡してGKE環境を使う
-    # （未指定の場合は現在のContextを利用）
-    # flags:
-    #   global:
-    #     - --context=gke_PROJECT_asia-northeast1-a_CLUSTER
-    manifests:
-      # 適用するマニフェストのファイル名
-      - skaffold-*
+  artifacts:
+  - image: amsy810/sample-skaffold
+    docker:
+      dockerfile: ./Dockerfile
+  tagPolicy:
+    dateTime: {}
 profiles:
-  # ローカルビルドでDockerイメージのプッシュをスキップし、
-  # Docker Desktop for Mac／Windows環境に開発用のマニフェストを使用するプロファイル
-  - name: devProfile
-    build:
-      local:
-        skipPush: true
-    deploy:
-      kubectl:
-        flags:
-          global:
-            # kubectl実行時に--contextオプションを渡して
-            # Docker Desktop for Mac／Windowsの環境を使う
-            - --context=docker-for-desktop
-        manifests:
-          - dev-skaffold-*
+# GKE環境に本番用のマニフェストを使用するプロファイル
+- name: prdProfile
+  build:
+    local:
+      push: true # イメージのプッシュを行う
+  deploy:
+    kubeContext: gke_cyberagent-001_asia-northeast1-b_k8s
+    kubectl:
+      manifests:
+        # 適用するマニフェストのファイル名
+        - skaffold-*
+# Docker Desktop環境に開発用のマニフェストを使用するプロファイル
+- name: devProfile
+  build:
+    local:
+      push: false # イメージのプッシュを行わない
+  deploy:
+    kubeContext: docker-desktop
+    kubectl:
+      manifests:
+        # 適用するマニフェストのファイル名
+        - dev-skaffold-*

@@ -3,11 +3,11 @@ kind: Config
 build:
   # ビルドしたDockerイメージの保存先とイメージ名
   artifacts:
-  - image: DOCKERHUB_USER/skaffold-sample
+  - image: amsy810/sample-skaffold
     docker:
       dockerfile: ./Dockerfile
   tagPolicy:
-    gitCommit: {}
+    dateTime: {}
   local:
     push: false # イメージのプッシュを行わない
 deploy:

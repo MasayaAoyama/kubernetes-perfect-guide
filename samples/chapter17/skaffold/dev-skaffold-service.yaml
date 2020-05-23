@@ -10,4 +10,4 @@ spec:
       port: 80
       targetPort: 8080
   selector:
-    app: skaffold-sample
+    app: sample-skaffold
