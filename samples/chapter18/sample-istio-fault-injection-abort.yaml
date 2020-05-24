@@ -12,5 +12,6 @@ spec:
         subset: v1
     fault:
       abort:
-        percent: 50
+        percentage:
+          value: 50
         httpStatus: 500
