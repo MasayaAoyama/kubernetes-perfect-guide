@@ -31,16 +31,14 @@ spec:
             - sample-app
         topologyKey: failure-domain.beta.kubernetes.io/zone
     podAntiAffinity:
-      preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
-        podAffinityTerm:
-          labelSelector:
-            matchExpressions:
-            - key: app
-              operator: In
-              values:
-              - sample-app
-          topologyKey: kubernetes.io/hostname
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - sample-app
+        topologyKey: kubernetes.io/hostname
   containers:
   - name: nginx-container
     image: nginx:1.16
