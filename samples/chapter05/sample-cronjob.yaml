@@ -13,7 +13,7 @@ spec:
     spec:
       completions: 1
       parallelism: 1
-      backoffLimit: 1
+      backoffLimit: 0
       template:
         spec:
           containers:
