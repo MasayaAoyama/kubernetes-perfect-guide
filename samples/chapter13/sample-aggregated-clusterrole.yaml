@@ -6,7 +6,7 @@ metadata:
   labels:
     app: sample-rbac
 rules:
-- apiGroups: [""]
+- apiGroups: ["apps"]
   resources: ["deployments"]
   verbs: ["get"]
 
