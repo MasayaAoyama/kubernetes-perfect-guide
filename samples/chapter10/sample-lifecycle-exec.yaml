@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: sample-lifecycle
+  name: sample-lifecycle-exec
 spec:
   containers:
     - name: nginx-container
