@@ -4,8 +4,8 @@ metadata:
   name: sample-runuser
 spec:
   securityContext:
-    runAsUser: 99
-    # runAsGroup: 99
+    runAsUser: 65534
+    runAsGroup: 65534
     supplementalGroups:
     - 1001
     - 1002
