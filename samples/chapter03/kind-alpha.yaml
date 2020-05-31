@@ -34,16 +34,16 @@ kubeadmConfigPatches:
     EndpointSliceProxying: true
 nodes:
 - role: control-plane
-  image: amsy810/kind-node:v1.18.1
+  image: amsy810/kind-node:v1.18.2
 - role: control-plane
-  image: amsy810/kind-node:v1.18.1
+  image: amsy810/kind-node:v1.18.2
 - role: control-plane
-  image: amsy810/kind-node:v1.18.1
+  image: amsy810/kind-node:v1.18.2
 - role: worker
-  image: amsy810/kind-node:v1.18.1
+  image: amsy810/kind-node:v1.18.2
 - role: worker
-  image: amsy810/kind-node:v1.18.1
+  image: amsy810/kind-node:v1.18.2
 - role: worker
-  image: amsy810/kind-node:v1.18.1
+  image: amsy810/kind-node:v1.18.2
 - role: worker
-  image: amsy810/kind-node:v1.18.1
+  image: amsy810/kind-node:v1.18.2
