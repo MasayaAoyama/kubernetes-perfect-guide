@@ -1,8 +1,0 @@
-serviceAccount:
-  annotations:
-    iam.gke.io/gcp-service-account: external-secret-gsa@_PROJECT_.iam.gserviceaccount.com"
-env:
-  AWS_REGION: 
-  VAULT_ADDR:
-  GOOGLE_APPLICATION_CREDENTIALS:
-
