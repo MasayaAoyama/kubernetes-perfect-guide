@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: sample-configmap
+  name: sample-configmap-immutable
 data:
   thread: "16"
   connection.max: "100"
