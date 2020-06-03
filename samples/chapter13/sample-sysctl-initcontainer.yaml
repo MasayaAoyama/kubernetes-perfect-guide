@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: sample-sysctl-old
+  name: sample-sysctl-initcontainer
 spec:
   initContainers:
   - name: initialize-sysctl
