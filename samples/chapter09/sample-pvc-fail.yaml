@@ -1,0 +1,10 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: sample-pvc-fail
+spec:
+  resources:
+    requests:
+      storage: 15Gi
+  accessModes:
+    - ReadWriteOnce
