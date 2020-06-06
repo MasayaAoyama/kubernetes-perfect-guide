@@ -1,4 +1,4 @@
-imageTags:
+images:
   - name: nginx
     newName: amsy810/echo-nginx
     newTag: latest
