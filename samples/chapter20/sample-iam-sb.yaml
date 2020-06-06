@@ -1,9 +1,0 @@
-apiVersion: servicecatalog.k8s.io/v1beta1
-kind: ServiceBinding
-metadata:
-  name: sample-iam-sb
-  namespace: default
-spec:
-  instanceRef:
-    name: sample-iam-si
-  secretName: sample-iam-credential
