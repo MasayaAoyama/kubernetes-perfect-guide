@@ -10,7 +10,7 @@ spec:
       - {key: environment, operator: In, values: [stg]}
   resources:
     requests:
-      storage: 4Gi
+      storage: 3Gi
   accessModes:
     - ReadWriteOnce
   storageClassName: manual

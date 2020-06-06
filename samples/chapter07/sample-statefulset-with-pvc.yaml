@@ -27,5 +27,5 @@ spec:
           - ReadWriteOnce
         resources:
           requests:
-            storage: 10G
-        storageClassName: "sample-storageclass"
+            storage: 10Gi
+        storageClassName: sample-storageclass
