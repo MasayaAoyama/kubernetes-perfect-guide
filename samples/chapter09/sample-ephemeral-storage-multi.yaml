@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-ephemeral-storage-multi
+spec:
+  containers:
+    - name: container-a
+      image: amsy810/tools:latest
+      resources:
+        requests:
+          ephemeral-storage: "1024Mi"
+        limits:
+          ephemeral-storage: "2048Mi"
+      volumeMounts:
+      - mountPath: /cache
+        name: cache-volume
+    - name: container-b
+      image: amsy810/tools:latest
+      resources:
+        requests:
+          ephemeral-storage: "1024Mi"
+        limits:
+          ephemeral-storage: "2048Mi"
+      volumeMounts:
+      - mountPath: /cache
+        name: cache-volume
+  volumes:
+  - name: cache-volume
+    emptyDir: {}
