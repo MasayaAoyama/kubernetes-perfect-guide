@@ -7,6 +7,6 @@ spec:
   limits:
   - type: PersistentVolumeClaim
     max:
-      storage: 10Gi
+      storage: 20Gi
     min:
       storage: 3Gi
