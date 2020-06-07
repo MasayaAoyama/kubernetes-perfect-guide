@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: sample-rs-podsecuritypolicy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      serviceAccountName: psp-test # PodSecurityPolicyが利用可能なServiceAccount
+      containers:
+        - name: nginx-container
+          image: nginx:1.16

@@ -4,18 +4,18 @@ metadata:
   name: sample-podsecuritypolicy
 spec:
   privileged: false
+  runAsUser:
+    rule: RunAsAny
   allowPrivilegeEscalation: true
   allowedCapabilities:
   - '*'
-  runAsUser:
-    rule: 'MustRunAsNonRoot'
   allowedHostPaths:
   - pathPrefix: "/etc"
   fsGroup:
-    rule: 'RunAsAny'
+    rule: RunAsAny
   supplementalGroups:
-    rule: 'RunAsAny'
+    rule: RunAsAny
   seLinux:
-    rule: 'RunAsAny'
+    rule: RunAsAny
   volumes:
   - '*'
