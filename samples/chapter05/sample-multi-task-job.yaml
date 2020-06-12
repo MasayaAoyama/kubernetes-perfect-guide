@@ -7,8 +7,6 @@ spec:
   parallelism: 3
   backoffLimit: 5
   template:
-    metadata:
-      name: sleep-job
     spec:
       containers:
       - name: tools-container
