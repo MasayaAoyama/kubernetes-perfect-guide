@@ -1,5 +1,5 @@
-kind: PersistentVolumeClaim
 apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
   name: sample-pvc
 spec:
@@ -7,10 +7,13 @@ spec:
     matchLabels:
       type: gce-pv
     matchExpressions:
-      - {key: environment, operator: In, values: [stg]}
+    - key: environment
+      operator: In
+      values:
+      - stg
   resources:
     requests:
       storage: 3Gi
   accessModes:
-    - ReadWriteOnce
+  - ReadWriteOnce
   storageClassName: manual

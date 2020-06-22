@@ -10,7 +10,6 @@ spec:
   containers:
     - name: nginx-container
       image: nginx:1.16-alpine
-
 ---
 apiVersion: v1
 kind: Pod
@@ -23,13 +22,11 @@ spec:
   containers:
     - name: nginx-container
       image: nginx:1.16-alpine
-
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
   name: nptest
-
 ---
 apiVersion: v1
 kind: Pod
@@ -42,7 +39,6 @@ spec:
   containers:
     - name: nginx-container
       image: nginx:1.16-alpine
-
 ---
 apiVersion: v1
 kind: Pod
