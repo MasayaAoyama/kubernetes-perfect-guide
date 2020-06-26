@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-hpa-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+        - name: tools-container
+          image: amsy810/tools:latest
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 100m
