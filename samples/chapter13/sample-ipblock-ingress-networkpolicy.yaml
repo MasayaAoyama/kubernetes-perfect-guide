@@ -12,7 +12,7 @@ spec:
   ingress:
   - from:
     - ipBlock:
-        cidr: 10.12.1.16/32
+        cidr: 10.12.1.16/32 # sample-pod-np1のPod IPアドレスに書き換えてください
     ports:
     - protocol: TCP
       port: 80
