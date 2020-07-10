@@ -17,4 +17,3 @@ spec:
     emptyDir:
       medium: Memory
       sizeLimit: 128Mi
-

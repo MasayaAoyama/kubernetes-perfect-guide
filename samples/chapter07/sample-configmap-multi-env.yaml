@@ -4,8 +4,8 @@ metadata:
   name: sample-configmap-multi-env
 spec:
   containers:
-    - name: configmap-container
-      image: nginx:1.16
-      envFrom:
-      - configMapRef:
-          name: sample-configmap
+  - name: configmap-container
+    image: nginx:1.16
+    envFrom:
+    - configMapRef:
+        name: sample-configmap

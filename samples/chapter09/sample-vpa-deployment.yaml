@@ -13,17 +13,15 @@ spec:
         app: sample-app
     spec:
       containers:
-        - name: vpa-container
-          image: amsy810/tools:latest
-          resources:
-            requests:
-              cpu: 300m
-              memory: 300Mi
-        - name: no-vpa-container
-          image: amsy810/tools:latest
-          resources:
-            requests:
-              cpu: 100m
-              memory: 100Mi
-
-
+      - name: vpa-container
+        image: amsy810/tools:latest
+        resources:
+          requests:
+            cpu: 300m
+            memory: 300Mi
+      - name: no-vpa-container
+        image: amsy810/tools:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi

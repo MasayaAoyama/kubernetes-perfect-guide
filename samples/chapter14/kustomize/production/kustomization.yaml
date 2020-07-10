@@ -1,7 +1,7 @@
 bases:
-  - ../resources-sample/
+- ../resources-sample/
 patchesStrategicMerge:
-  - ./patch-replicas.yaml
+- ./patch-replicas.yaml
 images:
-  - name: nginx
-    newTag: production
+- name: nginx
+  newTag: production

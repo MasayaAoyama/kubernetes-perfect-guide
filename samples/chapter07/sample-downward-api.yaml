@@ -4,19 +4,19 @@ metadata:
   name: sample-downward-api
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:1.16
-      volumeMounts:
-        - name: downward-api-volume
-          mountPath: /srv
-  volumes:
+  - name: nginx-container
+    image: nginx:1.16
+    volumeMounts:
     - name: downward-api-volume
-      downwardAPI:
-        items:
-          - path: "podname"
-            fieldRef:
-              fieldPath: metadata.name
-          - path: "cpu-request"
-            resourceFieldRef:
-              containerName: nginx-container
-              resource: requests.cpu
+      mountPath: /srv
+  volumes:
+  - name: downward-api-volume
+    downwardAPI:
+      items:
+      - path: "podname"
+        fieldRef:
+          fieldPath: metadata.name
+      - path: "cpu-request"
+        resourceFieldRef:
+          containerName: nginx-container
+          resource: requests.cpu

@@ -1,8 +1,8 @@
 resources:
-  - sample-deployment.yaml
+- sample-deployment.yaml
 configMapGenerator:
-  - name: generated-configmap
-    literals:
-      - KEY1=VAL1
-    files:
-      - ./sample.txt
+- name: generated-configmap
+  literals:
+  - KEY1=VAL1
+  files:
+  - ./sample.txt

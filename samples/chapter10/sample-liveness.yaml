@@ -4,15 +4,15 @@ metadata:
   name: sample-liveness
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:1.16
-      livenessProbe:
-        httpGet:
-          path: /index.html
-          port: 80
-          scheme: HTTP
-        timeoutSeconds: 1
-        successThreshold: 1
-        failureThreshold: 2
-        initialDelaySeconds: 5
-        periodSeconds: 3
+  - name: nginx-container
+    image: nginx:1.16
+    livenessProbe:
+      httpGet:
+        path: /index.html
+        port: 80
+        scheme: HTTP
+      timeoutSeconds: 1
+      successThreshold: 1
+      failureThreshold: 2
+      initialDelaySeconds: 5
+      periodSeconds: 3

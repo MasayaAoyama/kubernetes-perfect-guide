@@ -4,23 +4,23 @@ metadata:
   name: sample-healthcheck
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:1.16
-      livenessProbe:
-        httpGet:
-          path: /index.html
-          port: 80
-          scheme: HTTP
-        timeoutSeconds: 1
-        successThreshold: 1
-        failureThreshold: 2
-        initialDelaySeconds: 5
-        periodSeconds: 3
-      readinessProbe:
-        exec:
-          command: ["ls", "/usr/share/nginx/html/50x.html"]
-        timeoutSeconds: 1
-        successThreshold: 2
-        failureThreshold: 1
-        initialDelaySeconds: 5
-        periodSeconds: 3
+  - name: nginx-container
+    image: nginx:1.16
+    livenessProbe:
+      httpGet:
+        path: /index.html
+        port: 80
+        scheme: HTTP
+      timeoutSeconds: 1
+      successThreshold: 1
+      failureThreshold: 2
+      initialDelaySeconds: 5
+      periodSeconds: 3
+    readinessProbe:
+      exec:
+        command: ["ls", "/usr/share/nginx/html/50x.html"]
+      timeoutSeconds: 1
+      successThreshold: 2
+      failureThreshold: 1
+      initialDelaySeconds: 5
+      periodSeconds: 3

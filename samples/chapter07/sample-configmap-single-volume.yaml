@@ -4,15 +4,15 @@ metadata:
   name: sample-configmap-single-volume
 spec:
   containers:
-    - name: configmap-container
-      image: nginx:1.16
-      volumeMounts:
-      - name: config-volume
-        mountPath: /config
-  volumes:
+  - name: configmap-container
+    image: nginx:1.16
+    volumeMounts:
     - name: config-volume
-      configMap:
-        name: sample-configmap
-        items:
-        - key: nginx.conf
-          path: nginx-sample.conf
+      mountPath: /config
+  volumes:
+  - name: config-volume
+    configMap:
+      name: sample-configmap
+      items:
+      - key: nginx.conf
+        path: nginx-sample.conf

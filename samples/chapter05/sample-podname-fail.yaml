@@ -4,5 +4,5 @@ metadata:
   name: sample_podname_fail
 spec:
   containers:
-    - name: nginx-container-112
-      image: nginx:1.16
+  - name: nginx-container-112
+    image: nginx:1.16

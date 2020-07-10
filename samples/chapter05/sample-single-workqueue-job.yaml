@@ -3,8 +3,8 @@ kind: Job
 metadata:
   name: sample-single-workqueue-job
 spec:
-  # ζ‡ε®γ—γªγ„
-  # completions: 1
+  # ζεγγγ
+# completions: 1
   parallelism: 1
   backoffLimit: 1
   template:

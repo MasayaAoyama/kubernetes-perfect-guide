@@ -4,17 +4,17 @@ metadata:
   name: sample-configmap-scripts
 spec:
   containers:
-    - name: configmap-container
-      image: nginx:1.16
-      command: ["/config/test.sh"]
-      volumeMounts:
-      - name: config-volume
-        mountPath: /config
-  volumes:
+  - name: configmap-container
+    image: nginx:1.16
+    command: ["/config/test.sh"]
+    volumeMounts:
     - name: config-volume
-      configMap:
-        name: sample-configmap
-        items:
-        - key: test.sh
-          path: test.sh
-          mode: 493 # 0755
+      mountPath: /config
+  volumes:
+  - name: config-volume
+    configMap:
+      name: sample-configmap
+      items:
+      - key: test.sh
+        path: test.sh
+        mode: 493 # 0755

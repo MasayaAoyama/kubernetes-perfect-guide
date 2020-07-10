@@ -13,10 +13,10 @@ spec:
         app: sample-app
     spec:
       containers:
-        - name: tools-container
-          image: amsy810/tools:latest
-          resources:
-            requests:
-              cpu: 100m
-            limits:
-              cpu: 100m
+      - name: tools-container
+        image: amsy810/tools:latest
+        resources:
+          requests:
+            cpu: 100m
+          limits:
+            cpu: 100m

@@ -13,5 +13,5 @@ spec:
         app: dev-sample-skaffold
     spec:
       containers:
-        - name: nginx-container
-          image: DOCKERHUB_USER/sample-skaffold
+      - name: nginx-container
+        image: DOCKERHUB_USER/sample-skaffold

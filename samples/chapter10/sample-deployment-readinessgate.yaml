@@ -13,7 +13,7 @@ spec:
         app: sample-app
     spec:
       readinessGates:
-        - conditionType: "amsy.dev/sample-condition"
+      - conditionType: "amsy.dev/sample-condition"
       containers:
-        - name: nginx-container
-          image: nginx:1.16
+      - name: nginx-container
+        image: nginx:1.16

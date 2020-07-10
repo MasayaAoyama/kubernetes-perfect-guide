@@ -4,7 +4,7 @@ metadata:
   name: sample-2pod
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:1.16
-    - name: redis-container
-      image: redis:3.2
+  - name: nginx-container
+    image: nginx:1.16
+  - name: redis-container
+    image: redis:3.2

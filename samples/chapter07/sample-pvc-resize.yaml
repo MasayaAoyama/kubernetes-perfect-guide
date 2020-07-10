@@ -4,7 +4,7 @@ metadata:
   name: sample-pvc-resize
 spec:
   accessModes:
-    - ReadWriteOnce
+  - ReadWriteOnce
   resources:
     requests:
       storage: 8Gi

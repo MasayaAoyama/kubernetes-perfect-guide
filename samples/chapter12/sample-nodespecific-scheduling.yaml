@@ -5,5 +5,5 @@ metadata:
 spec:
   nodeName: gke-k8s-default-pool-9c2aa160-d2pl
   containers:
-    - name: nginx-container
-      image: nginx:1.16
+  - name: nginx-container
+    image: nginx:1.16

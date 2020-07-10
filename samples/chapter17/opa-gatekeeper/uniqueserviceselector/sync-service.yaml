@@ -6,6 +6,6 @@ metadata:
 spec:
   sync:
     syncOnly:
-      - group: ""
-        version: v1
-        kind: Service
+    - group: ""
+      version: v1
+      kind: Service

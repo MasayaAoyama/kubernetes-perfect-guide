@@ -4,10 +4,10 @@ metadata:
   name: sample-pod-overratio
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:1.16
-      resources:
-        requests:
-          cpu: 125m
-        limits:
-          cpu: 500m
+  - name: nginx-container
+    image: nginx:1.16
+    resources:
+      requests:
+        cpu: 125m
+      limits:
+        cpu: 500m

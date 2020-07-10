@@ -14,5 +14,5 @@ spec:
     securityContext:
       privileged: true
   containers:
-    - name: tools-container
-      image: amsy810/tools:latest
+  - name: tools-container
+    image: amsy810/tools:latest

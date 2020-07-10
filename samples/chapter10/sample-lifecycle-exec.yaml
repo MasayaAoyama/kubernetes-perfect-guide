@@ -4,13 +4,13 @@ metadata:
   name: sample-lifecycle-exec
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:1.16
-      command: ["/bin/sh", "-c", "touch /tmp/started; sleep 3600"]
-      lifecycle:
-        postStart:
-          exec:
-            command: ["/bin/sh", "-c", "sleep 20; touch /tmp/poststart"]
-        preStop:
-          exec:
-            command: ["/bin/sh", "-c", "touch /tmp/prestop; sleep 20"]
+  - name: nginx-container
+    image: nginx:1.16
+    command: ["/bin/sh", "-c", "touch /tmp/started; sleep 3600"]
+    lifecycle:
+      postStart:
+        exec:
+          command: ["/bin/sh", "-c", "sleep 20; touch /tmp/poststart"]
+      preStop:
+        exec:
+          command: ["/bin/sh", "-c", "touch /tmp/prestop; sleep 20"]

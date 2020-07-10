@@ -8,11 +8,11 @@ spec:
     matchLabels:
       app: podpreset
   env:
-    - name: SAMPLE_ENV
-      value: "SAMPLE_VALUE"
+  - name: SAMPLE_ENV
+    value: "SAMPLE_VALUE"
   volumeMounts:
-    - mountPath: /cache
-      name: cache-volume
+  - mountPath: /cache
+    name: cache-volume
   volumes:
-    - name: cache-volume
-      emptyDir: {}
+  - name: cache-volume
+    emptyDir: {}

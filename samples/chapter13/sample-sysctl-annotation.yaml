@@ -7,5 +7,5 @@ metadata:
     security.alpha.kubernetes.io/unsafe-sysctls: net.core.somaxconn="12345"
 spec:
   containers:
-    - name: tools-container
-      image: amsy810/tools:latest
+  - name: tools-container
+    image: amsy810/tools:latest

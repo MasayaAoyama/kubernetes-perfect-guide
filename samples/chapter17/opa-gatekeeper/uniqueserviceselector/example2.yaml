@@ -4,7 +4,7 @@ metadata:
   name: test-service2
 spec:
   ports:
-    - port: 443
+  - port: 443
   selector:
     app: sample-app
     project: a

@@ -6,8 +6,8 @@ metadata:
     app: sample-app
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:1.16
-      env:
-        - name: MAX_CONNECTION
-          value: "100"
+  - name: nginx-container
+    image: nginx:1.16
+    env:
+    - name: MAX_CONNECTION
+      value: "100"

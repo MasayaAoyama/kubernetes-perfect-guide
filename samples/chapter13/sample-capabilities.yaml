@@ -4,9 +4,9 @@ metadata:
   name: sample-capabilities
 spec:
   containers:
-    - name: tools-container
-      image: amsy810/tools:latest
-      securityContext:
-        capabilities:
-          add: ["SYS_ADMIN"]
-          drop: ["AUDIT_WRITE"]
+  - name: tools-container
+    image: amsy810/tools:latest
+    securityContext:
+      capabilities:
+        add: ["SYS_ADMIN"]
+        drop: ["AUDIT_WRITE"]

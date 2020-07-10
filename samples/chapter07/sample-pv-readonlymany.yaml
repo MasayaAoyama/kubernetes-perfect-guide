@@ -13,14 +13,14 @@ spec:
         app: sample-app
     spec:
       containers:
-        - name: nginx-container
-          image: nginx:1.16
-          volumeMounts:
-          - mountPath: "/usr/share/nginx/html"
-            name: nginx-pvc
-            # readOnly: true
+      - name: nginx-container
+        image: nginx:1.16
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: nginx-pvc
+          # readOnly: true
       volumes:
-        - name: nginx-pvc
-          persistentVolumeClaim:
-            claimName: sample-pvc
-            readOnly: true
+      - name: nginx-pvc
+        persistentVolumeClaim:
+          claimName: sample-pvc
+          readOnly: true

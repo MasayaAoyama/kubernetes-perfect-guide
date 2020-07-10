@@ -5,9 +5,9 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - name: "http-port"
-      protocol: "TCP"
-      port: 80
-      targetPort: 8080
+  - name: "http-port"
+    protocol: "TCP"
+    port: 80
+    targetPort: 8080
   selector:
     app: sample-skaffold

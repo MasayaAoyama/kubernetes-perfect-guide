@@ -4,10 +4,10 @@ metadata:
   name: sample-pod-overrequest
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:1.16
-      resources:
-        requests:
-          cpu: 100m
-        limits:
-          cpu: 100m
+  - name: nginx-container
+    image: nginx:1.16
+    resources:
+      requests:
+        cpu: 100m
+      limits:
+        cpu: 100m

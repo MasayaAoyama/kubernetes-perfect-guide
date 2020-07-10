@@ -6,23 +6,23 @@ spec:
   affinity:
     podAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - sample-app
+        topologyKey: failure-domain.beta.kubernetes.io/zone
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        podAffinityTerm:
+          labelSelector:
             matchExpressions:
             - key: app
               operator: In
               values:
               - sample-app
-          topologyKey: failure-domain.beta.kubernetes.io/zone
-      preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 1
-          podAffinityTerm:
-            labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - sample-app
-            topologyKey: kubernetes.io/hostname
+          topologyKey: kubernetes.io/hostname
   containers:
-    - name: nginx-container
-      image: nginx:1.16
+  - name: nginx-container
+    image: nginx:1.16

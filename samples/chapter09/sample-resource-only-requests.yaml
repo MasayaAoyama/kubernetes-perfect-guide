@@ -4,9 +4,9 @@ metadata:
   name: sample-resource-only-requests
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:1.16
-      resources:
-        requests:
-          memory: 256Mi
-          cpu: 200m
+  - name: nginx-container
+    image: nginx:1.16
+    resources:
+      requests:
+        memory: 256Mi
+        cpu: 200m

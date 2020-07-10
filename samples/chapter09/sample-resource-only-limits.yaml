@@ -4,9 +4,9 @@ metadata:
   name: sample-resource-only-limits
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:1.16
-      resources:
-        limits:
-          memory: 256Mi
-          cpu: 200m
+  - name: nginx-container
+    image: nginx:1.16
+    resources:
+      limits:
+        memory: 256Mi
+        cpu: 200m

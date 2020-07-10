@@ -4,7 +4,7 @@ metadata:
   name: sample-rootfile-readonly
 spec:
   containers:
-    - name: tools-container
-      image: amsy810/tools:latest
-      securityContext:
-        readOnlyRootFilesystem: true
+  - name: tools-container
+    image: amsy810/tools:latest
+    securityContext:
+      readOnlyRootFilesystem: true

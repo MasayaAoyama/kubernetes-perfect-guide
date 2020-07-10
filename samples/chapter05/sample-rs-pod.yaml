@@ -6,5 +6,5 @@ metadata:
     app: sample-app
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:1.17
+  - name: nginx-container
+    image: nginx:1.17

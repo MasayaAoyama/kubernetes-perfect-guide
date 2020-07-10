@@ -6,7 +6,7 @@ spec:
   storageClassName: sample-storageclass
   volumeMode: Block
   accessModes:
-    - ReadWriteOnce
+  - ReadWriteOnce
   resources:
     requests:
       storage: 3Gi

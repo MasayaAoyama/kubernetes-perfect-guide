@@ -7,10 +7,10 @@ spec:
   externalTrafficPolicy: Local
   healthCheckNodePort: 30086
   ports:
-    - name: "http-port"
-      protocol: "TCP"
-      port: 8080
-      targetPort: 80
-      nodePort: 30085
+  - name: "http-port"
+    protocol: "TCP"
+    port: 8080
+    targetPort: 80
+    nodePort: 30085
   selector:
     app: sample-app

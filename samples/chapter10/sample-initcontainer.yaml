@@ -4,24 +4,24 @@ metadata:
   name: sample-initcontainer
 spec:
   initContainers:
-    - name: output-1
-      image: amsy810/tools:latest
-      command: ['sh', '-c', 'sleep 20; echo 1st > /usr/share/nginx/html/index.html']
-      volumeMounts:
-      - name: html-volume
-        mountPath: /usr/share/nginx/html/
-    - name: output-2
-      image: amsy810/tools:latest
-      command: ['sh', '-c', 'sleep 10; echo 2nd >> /usr/share/nginx/html/index.html']
-      volumeMounts:
-      - name: html-volume
-        mountPath: /usr/share/nginx/html/
+  - name: output-1
+    image: amsy810/tools:latest
+    command: ['sh', '-c', 'sleep 20; echo 1st > /usr/share/nginx/html/index.html']
+    volumeMounts:
+    - name: html-volume
+      mountPath: /usr/share/nginx/html/
+  - name: output-2
+    image: amsy810/tools:latest
+    command: ['sh', '-c', 'sleep 10; echo 2nd >> /usr/share/nginx/html/index.html']
+    volumeMounts:
+    - name: html-volume
+      mountPath: /usr/share/nginx/html/
   containers:
-    - name: nginx-container
-      image: nginx:1.16
-      volumeMounts:
-      - name: html-volume
-        mountPath: /usr/share/nginx/html/
+  - name: nginx-container
+    image: nginx:1.16
+    volumeMounts:
+    - name: html-volume
+      mountPath: /usr/share/nginx/html/
   volumes:
   - name: html-volume
     emptyDir: {}

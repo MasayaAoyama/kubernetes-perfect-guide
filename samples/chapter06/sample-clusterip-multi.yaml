@@ -5,13 +5,13 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - name: "http-port"
-      protocol: "TCP"
-      port: 8080
-      targetPort: 80
-    - name: "https-port"
-      protocol: "TCP"
-      port: 8443
-      targetPort: 443
+  - name: "http-port"
+    protocol: "TCP"
+    port: 8080
+    targetPort: 80
+  - name: "https-port"
+    protocol: "TCP"
+    port: 8443
+    targetPort: 443
   selector:
     app: sample-app

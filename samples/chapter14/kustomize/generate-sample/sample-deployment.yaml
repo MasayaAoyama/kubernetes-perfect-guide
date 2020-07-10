@@ -13,8 +13,8 @@ spec:
         app: sample-app
     spec:
       containers:
-        - name: nginx-container
-          image: nginx:1.16
-          envFrom:
-            - configMapRef:
-                name: generated-configmap
+      - name: nginx-container
+        image: nginx:1.16
+        envFrom:
+        - configMapRef:
+            name: generated-configmap

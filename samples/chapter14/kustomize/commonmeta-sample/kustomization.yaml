@@ -3,6 +3,5 @@ commonLabels:
 commonAnnotations:
   annotation1: annotation1-val
 resources:
-  - sample-deployment.yaml
-  - sample-lb.yaml
-
+- sample-deployment.yaml
+- sample-lb.yaml

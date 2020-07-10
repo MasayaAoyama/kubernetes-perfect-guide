@@ -5,10 +5,10 @@ metadata:
 spec:
   match:
     kinds:
-      - apiGroups: [""]
-        kinds: ["Pod"]
+    - apiGroups: [""]
+      kinds: ["Pod"]
   parameters:
     message: "All namespaces must have an `app` label"
     labels:
-      - key: app
-        allowedRegex: "^[a-zA-Z]+$"
+    - key: app
+      allowedRegex: "^[a-zA-Z]+$"

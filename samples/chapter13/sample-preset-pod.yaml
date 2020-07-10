@@ -8,5 +8,5 @@ metadata:
     app: podpreset
 spec:
   containers:
-    - name: nginx-container
-      image: nginx:1.16
+  - name: nginx-container
+    image: nginx:1.16
