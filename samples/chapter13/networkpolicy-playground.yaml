@@ -8,8 +8,8 @@ metadata:
     app: np1
 spec:
   containers:
-    - name: nginx-container
-      image: amsy810/echo-nginx:latest
+  - name: nginx-container
+    image: amsy810/echo-nginx:latest
 ---
 apiVersion: v1
 kind: Pod
@@ -20,8 +20,8 @@ metadata:
     app: np2
 spec:
   containers:
-    - name: nginx-container
-      image: amsy810/echo-nginx:latest
+  - name: nginx-container
+    image: amsy810/echo-nginx:latest
 ---
 apiVersion: v1
 kind: Namespace
@@ -37,8 +37,8 @@ metadata:
     app: np3
 spec:
   containers:
-    - name: nginx-container
-      image: amsy810/echo-nginx:latest
+  - name: nginx-container
+    image: amsy810/echo-nginx:latest
 ---
 apiVersion: v1
 kind: Pod
@@ -49,5 +49,5 @@ metadata:
     app: np4
 spec:
   containers:
-    - name: nginx-container
-      image: amsy810/echo-nginx:latest
+  - name: nginx-container
+    image: amsy810/echo-nginx:latest

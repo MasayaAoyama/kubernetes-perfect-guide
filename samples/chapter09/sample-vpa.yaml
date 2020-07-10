@@ -11,12 +11,12 @@ spec:
     updateMode: Auto # Requests更新時にPodの再作成を行う
   resourcePolicy:
     containerPolicies:
-      - containerName: no-vpa-container
-        mode: "Off" # オートスケール対象外
-      - containerName: "*" # 指定していない残りすべてのコンテナ
-        mode: Auto # オートスケール対象
-        minAllowed:
-          memory: 300Mi
-        maxAllowed:
-          memory: 1000Mi
-        controlledResources: ["cpu", "memory"]
+    - containerName: no-vpa-container
+      mode: "Off" # オートスケール対象外
+    - containerName: "*" # 指定していない残りすべてのコンテナ
+      mode: Auto # オートスケール対象
+      minAllowed:
+        memory: 300Mi
+      maxAllowed:
+        memory: 1000Mi
+      controlledResources: ["cpu", "memory"]

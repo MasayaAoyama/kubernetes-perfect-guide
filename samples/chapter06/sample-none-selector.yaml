@@ -15,9 +15,9 @@ kind: Endpoints
 metadata:
   name: sample-none-selector
 subsets:
-  - addresses:
-    - ip: 192.168.1.1
-    - ip: 192.168.1.2
-    ports:
-      - protocol: TCP
-        port: 80
+- addresses:
+  - ip: 192.168.1.1
+  - ip: 192.168.1.2
+  ports:
+  - protocol: TCP
+    port: 80

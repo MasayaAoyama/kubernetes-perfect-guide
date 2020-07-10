@@ -6,10 +6,10 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - name: "http-port"
-      protocol: "TCP"
-      port: 8888
-      targetPort: 80
+  - name: "http-port"
+    protocol: "TCP"
+    port: 8888
+    targetPort: 80
   selector:
     ingress-app: sample1
 ---
@@ -21,8 +21,8 @@ metadata:
     ingress-app: sample1
 spec:
   containers:
-    - name: nginx-container
-      image: amsy810/echo-nginx:latest
+  - name: nginx-container
+    image: amsy810/echo-nginx:latest
 ---
 apiVersion: v1
 kind: Service
@@ -31,10 +31,10 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - name: "http-port"
-      protocol: "TCP"
-      port: 8888
-      targetPort: 80
+  - name: "http-port"
+    protocol: "TCP"
+    port: 8888
+    targetPort: 80
   selector:
     ingress-app: sample2
 ---
@@ -46,8 +46,8 @@ metadata:
     ingress-app: sample2
 spec:
   containers:
-    - name: nginx-container
-      image: amsy810/echo-nginx:latest
+  - name: nginx-container
+    image: amsy810/echo-nginx:latest
 ---
 apiVersion: v1
 kind: Service
@@ -56,10 +56,10 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - name: "http-port"
-      protocol: "TCP"
-      port: 8888
-      targetPort: 80
+  - name: "http-port"
+    protocol: "TCP"
+    port: 8888
+    targetPort: 80
   selector:
     ingress-app: default
 ---
@@ -71,5 +71,5 @@ metadata:
     ingress-app: default
 spec:
   containers:
-    - name: nginx-container
-      image: amsy810/echo-nginx:latest
+  - name: nginx-container
+    image: amsy810/echo-nginx:latest

@@ -5,13 +5,13 @@ metadata:
   name: sample-resource-containers-1
 spec:
   containers:
-    - name: container-a
-      image: amsy810/tools:latest
-      resources:
-        requests:
-          cpu: 75m
-        limits:
-          cpu: 150m
+  - name: container-a
+    image: amsy810/tools:latest
+    resources:
+      requests:
+        cpu: 75m
+      limits:
+        cpu: 150m
 ---
 apiVersion: v1
 kind: Pod
@@ -19,20 +19,20 @@ metadata:
   name: sample-resource-containers-2
 spec:
   containers:
-    - name: container-a
-      image: amsy810/tools:latest
-      resources:
-        requests:
-          cpu: 75m
-        limits:
-          cpu: 150m
-    - name: container-b
-      image: amsy810/tools:latest
-      resources:
-        requests:
-          cpu: 50m
-        limits:
-          cpu: 100m
+  - name: container-a
+    image: amsy810/tools:latest
+    resources:
+      requests:
+        cpu: 75m
+      limits:
+        cpu: 150m
+  - name: container-b
+    image: amsy810/tools:latest
+    resources:
+      requests:
+        cpu: 50m
+      limits:
+        cpu: 100m
 ---
 apiVersion: v1
 kind: Pod
@@ -40,35 +40,35 @@ metadata:
   name: sample-resource-containers-3
 spec:
   initContainers:
-    - name: initcontainer-a
-      image: amsy810/success:latest
-      resources:
-        requests:
-          cpu: 125m
-        limits:
-          cpu: 250m
-    - name: initcontainer-b
-      image: amsy810/success:latest
-      resources:
-        requests:
-          cpu: 100m
-        limits:
-          cpu: 200m
+  - name: initcontainer-a
+    image: amsy810/success:latest
+    resources:
+      requests:
+        cpu: 125m
+      limits:
+        cpu: 250m
+  - name: initcontainer-b
+    image: amsy810/success:latest
+    resources:
+      requests:
+        cpu: 100m
+      limits:
+        cpu: 200m
   containers:
-    - name: container-a
-      image: amsy810/tools:latest
-      resources:
-        requests:
-          cpu: 75m
-        limits:
-          cpu: 150m
-    - name: container-b
-      image: amsy810/tools:latest
-      resources:
-        requests:
-          cpu: 100m
-        limits:
-          cpu: 200m
+  - name: container-a
+    image: amsy810/tools:latest
+    resources:
+      requests:
+        cpu: 75m
+      limits:
+        cpu: 150m
+  - name: container-b
+    image: amsy810/tools:latest
+    resources:
+      requests:
+        cpu: 100m
+      limits:
+        cpu: 200m
 ---
 apiVersion: v1
 kind: Pod
@@ -76,33 +76,33 @@ metadata:
   name: sample-resource-containers-4
 spec:
   initContainers:
-    - name: initcontainer-a
-      image: amsy810/success:latest
-      resources:
-        requests:
-          cpu: 125m
-        limits:
-          cpu: 250m
-    - name: initcontainer-b
-      image: amsy810/success:latest
-      resources:
-        requests:
-          cpu: 100m
-        limits:
-          cpu: 200m
+  - name: initcontainer-a
+    image: amsy810/success:latest
+    resources:
+      requests:
+        cpu: 125m
+      limits:
+        cpu: 250m
+  - name: initcontainer-b
+    image: amsy810/success:latest
+    resources:
+      requests:
+        cpu: 100m
+      limits:
+        cpu: 200m
   containers:
-    - name: container-a
-      image: amsy810/tools:latest
-      resources:
-        requests:
-          cpu: 50m
-        limits:
-          cpu: 100m
-    - name: container-b
-      image: amsy810/tools:latest
-      resources:
-        requests:
-          cpu: 50m
-        limits:
-          cpu: 100m
+  - name: container-a
+    image: amsy810/tools:latest
+    resources:
+      requests:
+        cpu: 50m
+      limits:
+        cpu: 100m
+  - name: container-b
+    image: amsy810/tools:latest
+    resources:
+      requests:
+        cpu: 50m
+      limits:
+        cpu: 100m
 

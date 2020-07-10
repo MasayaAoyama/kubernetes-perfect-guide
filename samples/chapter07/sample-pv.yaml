@@ -9,7 +9,7 @@ spec:
   capacity: # 容量
     storage: 10Gi
   accessModes: # アクセスモード
-    - ReadWriteOnce
+  - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain # Reclaim Policy
   storageClassName: manual # StorageClass
   # PersistentVolumeプラグインごとの設定（GCE Persistent Diskの例）

@@ -9,8 +9,8 @@ spec:
   hostname: sample-hostname
   subdomain: sample-subdomain
   containers:
-    - name: nginx-container
-      image: amsy810/tools:latest
+  - name: nginx-container
+    image: amsy810/tools:latest
 ---
 apiVersion: v1
 kind: Service

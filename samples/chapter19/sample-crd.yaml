@@ -12,38 +12,37 @@ spec:
     kind: Database
     shortNames:
     - db
-
   versions:
-    - name: v1
-      served: true
-      storage: true
-      # 各フィールドのバリデーションを設定
-      schema:
-        openAPIV3Schema:
-          type: object
-          properties:
-            spec:
-              type: object
-              properties:
-                dbType:
-                  type: string
-                  pattern: '^(mysql|mariadb|postgresql)$'
-                  default: mysql
-                diskSize:
-                  type: integer
-                  minimum: 10
-                  maximum: 1000
-                  default: 20
-      #「kubectl get」実行時に表示するカラムの設定
-      additionalPrinterColumns:
-      - name: Type
-        type: string
-        description: Database type (mysql|mariadb|postgresql)
-        jsonPath: .spec.dbType
-      - name: DiskSize
-        type: integer
-        description: Database disk size
-        jsonPath: .spec.diskSize
-      - name: Age
-        type: date
-        jsonPath: .metadata.creationTimestamp
+  - name: v1
+    served: true
+    storage: true
+    # 各フィールドのバリデーションを設定
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              dbType:
+                type: string
+                pattern: '^(mysql|mariadb|postgresql)$'
+                default: mysql
+              diskSize:
+                type: integer
+                minimum: 10
+                maximum: 1000
+                default: 20
+    #「kubectl get」実行時に表示するカラムの設定
+    additionalPrinterColumns:
+    - name: Type
+      type: string
+      description: Database type (mysql|mariadb|postgresql)
+      jsonPath: .spec.dbType
+    - name: DiskSize
+      type: integer
+      description: Database disk size
+      jsonPath: .spec.diskSize
+    - name: Age
+      type: date
+      jsonPath: .metadata.creationTimestamp

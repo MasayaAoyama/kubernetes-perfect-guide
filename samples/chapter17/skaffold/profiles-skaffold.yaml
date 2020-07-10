@@ -18,8 +18,8 @@ profiles:
     kubeContext: gke_PROJECT_asia-northeast1-a_k8s
     kubectl:
       manifests:
-        # 適用するマニフェストのファイル名
-        - skaffold-*
+      # 適用するマニフェストのファイル名
+      - skaffold-*
 # Docker Desktop環境に開発用のマニフェストを使用するプロファイル
 - name: devProfile
   build:
@@ -29,5 +29,5 @@ profiles:
     kubeContext: docker-desktop
     kubectl:
       manifests:
-        # 適用するマニフェストのファイル名
-        - dev-skaffold-*
+      # 適用するマニフェストのファイル名
+      - dev-skaffold-*

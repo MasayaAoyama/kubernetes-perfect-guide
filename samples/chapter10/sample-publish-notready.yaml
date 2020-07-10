@@ -16,11 +16,11 @@ spec:
         app: publish-notready
     spec:
       containers:
-        - name: nginx-container
-          image: amsy810/echo-nginx:latest
-          readinessProbe:
-            exec:
-              command: ["sh", "-c", "exit 1"]
+      - name: nginx-container
+        image: amsy810/echo-nginx:latest
+        readinessProbe:
+          exec:
+            command: ["sh", "-c", "exit 1"]
 ---
 apiVersion: v1
 kind: Service
@@ -30,9 +30,9 @@ spec:
   type: ClusterIP
   publishNotReadyAddresses: true
   ports:
-    - name: "http-port"
-      protocol: "TCP"
-      port: 8080
-      targetPort: 80
+  - name: "http-port"
+    protocol: "TCP"
+    port: 8080
+    targetPort: 80
   selector:
     app: publish-notready

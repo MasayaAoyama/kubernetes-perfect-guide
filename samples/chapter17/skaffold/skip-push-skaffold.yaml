@@ -13,5 +13,5 @@ build:
 deploy:
   kubectl:
     manifests:
-      # 適用するマニフェストのファイル名
-      - skaffold-*
+    # 適用するマニフェストのファイル名
+    - skaffold-*
