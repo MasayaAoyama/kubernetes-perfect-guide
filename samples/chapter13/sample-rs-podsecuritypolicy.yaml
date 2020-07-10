@@ -12,7 +12,7 @@ spec:
       labels:
         app: sample-app
     spec:
-      serviceAccountName: psp-test # PodSecurityPolicyãåçåèãServiceAccount
+      serviceAccountName: psp-test # PodSecurityPolicyãŒåˆ©ç”¨å¯èƒ½ãªServiceAccount
       containers:
       - name: nginx-container
         image: nginx:1.16

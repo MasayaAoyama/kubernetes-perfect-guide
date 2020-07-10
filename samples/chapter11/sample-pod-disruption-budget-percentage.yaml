@@ -4,7 +4,7 @@ metadata:
   name: sample-pod-disruption-budget-percentage
 spec:
   minAvailable: 90%
-  # γγγ
+  # γΎγγ―
   # maxUnavailable: 10%
   selector:
     matchLabels:

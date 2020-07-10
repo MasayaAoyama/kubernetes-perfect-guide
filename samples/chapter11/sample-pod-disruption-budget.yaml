@@ -4,7 +4,7 @@ metadata:
   name: sample-pod-disruption-budget
 spec:
   minAvailable: 1
-  # γγγ
+  # γΎγγ―
   # maxUnavailable: 1
   selector:
     matchLabels:
