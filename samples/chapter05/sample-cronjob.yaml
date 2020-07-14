@@ -18,5 +18,5 @@ spec:
         spec:
           containers:
           - name: tools-container
-            image: amsy810/random-exit:latest
+            image: amsy810/random-exit:v2.0
           restartPolicy: Never
