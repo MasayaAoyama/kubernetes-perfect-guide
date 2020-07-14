@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: tools-container
-    image: amsy810/tools:latest
+    image: amsy810/tools:v2.0
     livenessProbe:
       exec:
         command: ["sh", "-c", "echo [$(date)] liveness >> /root/log; test ! -e /root/liveness"]

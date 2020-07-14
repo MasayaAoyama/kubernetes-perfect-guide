@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
   - name: container-a
-    image: amsy810/tools:latest
+    image: amsy810/tools:v2.0
     resources:
       requests:
         cpu: 75m
@@ -20,14 +20,14 @@ metadata:
 spec:
   containers:
   - name: container-a
-    image: amsy810/tools:latest
+    image: amsy810/tools:v2.0
     resources:
       requests:
         cpu: 75m
       limits:
         cpu: 150m
   - name: container-b
-    image: amsy810/tools:latest
+    image: amsy810/tools:v2.0
     resources:
       requests:
         cpu: 50m
@@ -56,14 +56,14 @@ spec:
         cpu: 200m
   containers:
   - name: container-a
-    image: amsy810/tools:latest
+    image: amsy810/tools:v2.0
     resources:
       requests:
         cpu: 75m
       limits:
         cpu: 150m
   - name: container-b
-    image: amsy810/tools:latest
+    image: amsy810/tools:v2.0
     resources:
       requests:
         cpu: 100m
@@ -92,14 +92,14 @@ spec:
         cpu: 200m
   containers:
   - name: container-a
-    image: amsy810/tools:latest
+    image: amsy810/tools:v2.0
     resources:
       requests:
         cpu: 50m
       limits:
         cpu: 100m
   - name: container-b
-    image: amsy810/tools:latest
+    image: amsy810/tools:v2.0
     resources:
       requests:
         cpu: 50m

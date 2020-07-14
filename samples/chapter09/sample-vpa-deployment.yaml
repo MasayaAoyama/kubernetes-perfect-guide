@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
       - name: vpa-container
-        image: amsy810/tools:latest
+        image: amsy810/tools:v2.0
         resources:
           requests:
             cpu: 300m
             memory: 300Mi
       - name: no-vpa-container
-        image: amsy810/tools:latest
+        image: amsy810/tools:v2.0
         resources:
           requests:
             cpu: 100m

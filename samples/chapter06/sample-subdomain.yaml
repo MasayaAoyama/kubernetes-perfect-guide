@@ -10,7 +10,7 @@ spec:
   subdomain: sample-subdomain
   containers:
   - name: nginx-container
-    image: amsy810/tools:latest
+    image: amsy810/tools:v2.0
 ---
 apiVersion: v1
 kind: Service

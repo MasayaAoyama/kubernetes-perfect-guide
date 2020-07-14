@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: tools-container
-        image: amsy810/tools:latest
+        image: amsy810/tools:v2.0
         command: ["sh", "-c"]
         args: ["$(sleep 3600)"]
       restartPolicy: Never

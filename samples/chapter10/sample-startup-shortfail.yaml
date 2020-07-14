@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: tools-container
-    image: amsy810/tools:latest
+    image: amsy810/tools:v2.0
     readinessProbe:
       exec:
         command: ["sh", "-c", "echo [$(date)] readiness >> /root/log; test ! -e /root/readiness"]

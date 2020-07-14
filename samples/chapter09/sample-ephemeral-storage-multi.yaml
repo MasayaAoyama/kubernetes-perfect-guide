@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: container-a
-    image: amsy810/tools:latest
+    image: amsy810/tools:v2.0
     resources:
       requests:
         ephemeral-storage: "1024Mi"
@@ -15,7 +15,7 @@ spec:
     - mountPath: /cache
       name: cache-volume
   - name: container-b
-    image: amsy810/tools:latest
+    image: amsy810/tools:v2.0
     resources:
       requests:
         ephemeral-storage: "1024Mi"
