@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx-container
-        image: amsy810/echo-nginx:latest
+        image: amsy810/echo-nginx:v2.0
         ports:
         - name: http
           containerPort: 80
