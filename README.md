@@ -7,10 +7,11 @@
 （このリポジトリへのStarもお待ちしております。）
 
 電子書籍に関しては、Amazon以外からもPDFなどで入手可能です。
-* Amazon: http://amzn.asia/d/g5P72V5
-* Impress: https://book.impress.co.jp/books/1118101055
+* Amazon: https://www.amazon.co.jp/dp/4295009792
+* Impress: https://book.impress.co.jp/books/1119101148
 
 
+## （注意）第一版について
 
 こちらのブランチは `第二版` 用です。
 `第一版` に関しては、[1st branch](https://github.com/MasayaAoyama/kubernetes-perfect-guide/tree/1st)を参照してください。
