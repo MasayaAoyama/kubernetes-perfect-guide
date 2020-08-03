@@ -20,3 +20,24 @@
 $ git checkout 1st
 ```
 
+# Kubernetes perfect guide "2nd edition" - sample manifest repository
+
+Hello, I'm Masaya Aoyama ([@amsy810](https://twitter.com/@amsy810)).
+
+Thank you for choosing "kubernetes perfect guide "2nd edition".
+If you like this repo, please add star :)
+
+You can get E-book and PDF from Amazon or various sites.
+* Amazon: https://www.amazon.co.jp/dp/4295009792
+* Impress: https://book.impress.co.jp/books/1119101148
+
+
+## Note: about 1st edition
+
+This branch is for `2nd edition`.
+For `1st edition`, please refer [1st branch](https://github.com/MasayaAoyama/kubernetes-perfect-guide/tree/1st).
+
+```
+$ git checkout 1st
+```
+
