@@ -9,6 +9,7 @@
 電子書籍に関しては、Amazon以外からもPDFなどで入手可能です。
 * Amazon: https://www.amazon.co.jp/dp/4295009792
 * Impress: https://book.impress.co.jp/books/1119101148
+* その他いくつかのサイト
 
 
 ## （注意）第一版について
@@ -30,7 +31,7 @@ If you like this repo, please add star :)
 You can get E-book and PDF from Amazon or various sites.
 * Amazon: https://www.amazon.co.jp/dp/4295009792
 * Impress: https://book.impress.co.jp/books/1119101148
-
+* etc
 
 ## Note: about 1st edition
 
