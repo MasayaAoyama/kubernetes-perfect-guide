@@ -14,10 +14,10 @@
 ## （注意）第二版について
 
 こちらのブランチは `第一版` 用です。
-`第二版` に関しては、[2nd branch](https://github.com/MasayaAoyama/kubernetes-perfect-guide/tree/2nd)を参照してください。
+`第二版` に関しては、[2nd-edition branch](https://github.com/MasayaAoyama/kubernetes-perfect-guide/tree/2nd-edition)を参照してください。
 
 ```
-$ git checkout 2nd
+$ git checkout 2nd-edition
 ```
 
 # Kubernetes perfect guide "1st edition" - sample manifest repository
@@ -36,8 +36,8 @@ You can get E-book and PDF from Amazon or various sites.
 ## Note: about 2nd edition
 
 This branch is for `1st edition`.
-For `2nd edition`, please refer [2nd branch](https://github.com/MasayaAoyama/kubernetes-perfect-guide/tree/2nd).
+For `2nd edition`, please refer [2nd-edition branch](https://github.com/MasayaAoyama/kubernetes-perfect-guide/tree/2nd-edition).
 
 ```
-$ git checkout 2nd
+$ git checkout 2nd-edition
 ```
