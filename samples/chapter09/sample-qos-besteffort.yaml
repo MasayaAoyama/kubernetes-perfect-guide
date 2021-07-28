@@ -4,5 +4,5 @@ metadata:
   name: sample-qos-besteffort
 spec:
   containers:
-  - name: nginx-container
-    image: nginx:1.16
+    - name: nginx-container
+      image: nginx:1.12

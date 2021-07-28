@@ -13,5 +13,7 @@ spec:
         app: sample-app
     spec:
       containers:
-      - name: nginx-container
-        image: amsy810/echo-nginx:v2.0
+        - name: nginx-container
+          image: nginx:1.12
+          ports:
+            - containerPort: 80

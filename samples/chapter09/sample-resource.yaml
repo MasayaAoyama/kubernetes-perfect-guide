@@ -13,12 +13,12 @@ spec:
         app: sample-app
     spec:
       containers:
-      - name: nginx-container
-        image: nginx:1.16
-        resources:
-          requests:
-            memory: "1024Mi"
-            cpu: "500m"
-          limits:
-            memory: "2048Mi"
-            cpu: "1000m"
+        - name: nginx-container
+          image: nginx:1.12
+          resources:
+            requests:
+              memory: "1024Mi"
+              cpu: "500m"
+            limits:
+              memory: "2048Mi"
+              cpu: "1000m"

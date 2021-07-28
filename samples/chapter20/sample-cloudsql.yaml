@@ -1,0 +1,33 @@
+---
+apiVersion: sql.cnrm.cloud.google.com/v1beta1
+kind: SQLInstance
+metadata:
+  name: config-connector-cloudsql-instance
+spec:
+  region: asia-northeast3
+  databaseVersion: MYSQL_5_7
+  settings:
+    tier: db-n1-standard-1
+---
+apiVersion: sql.cnrm.cloud.google.com/v1beta1
+kind: SQLUser
+metadata:
+  name: config-connector-cloudsql-user
+spec:
+  instanceRef:
+    name: config-connector-cloudsql-instance
+  host: "%"
+  password:
+    value: "Password1234"
+---
+apiVersion: sql.cnrm.cloud.google.com/v1beta1
+kind: SQLDatabase
+metadata:
+  labels:
+    label-one: config-connector-cloudsql-database
+  name: config-connector-cloudsql-database
+spec:
+  charset: utf8mb4
+  collation: utf8mb4_bin
+  instanceRef:
+    name: config-connector-cloudsql-instance

@@ -3,15 +3,17 @@ kind: Job
 metadata:
   name: sample-single-workqueue-job
 spec:
-  # 指定しない
+  # 지정하지 않음
   # completions: 1
   parallelism: 1
   backoffLimit: 1
   template:
+    metadata:
+      name: sleep-job
     spec:
       containers:
-      - name: tools-container
-        image: amsy810/tools:v2.0
+      - name: sleep-container
+        image: centos:6
         command: ["sleep"]
         args: ["30"]
       restartPolicy: Never

@@ -5,9 +5,9 @@ metadata:
 spec:
   terminationGracePeriodSeconds: 30
   containers:
-  - name: nginx-container
-    image: nginx:1.16
-    lifecycle:
-      preStop:
-        exec:
-          command: ["/bin/sh", "-c", "echo preStop!; sleep 20"]
+    - name: nginx-container
+      image: nginx:1.12
+      lifecycle:
+        preStop:
+          exec:
+            command: ["/bin/sh", "-c", "echo preStop!; sleep 20"]

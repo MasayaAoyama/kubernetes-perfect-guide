@@ -5,13 +5,13 @@ metadata:
   namespace: default
 spec:
   hard:
-    # 作成可能なリソースの数（旧方式）
-    # count/*の新方式では指定不可
+    # 생성 가능한 리소스 수 (구방식)
+    # count/*의 신방식에서는 지정 불가
     sample-storageclass.storageclass.storage.k8s.io/persistentvolumeclaims: 10
     services.loadbalancers: 10
     services.nodeports: 10
 
-    # count/*の新方式でも指定可
+    # count/*의 신방식으로도 지정 가능
     pods: 10
     persistentvolumeclaims: 10
     replicationcontrollers: 10

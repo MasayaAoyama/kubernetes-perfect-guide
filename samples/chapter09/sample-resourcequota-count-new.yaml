@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   hard:
-    # 作成可能なリソースの数（新方式）
+    # 생성 가능한 리소스 수 (신방식）
     count/persistentvolumeclaims: 10
     count/services: 10
     count/secrets: 10

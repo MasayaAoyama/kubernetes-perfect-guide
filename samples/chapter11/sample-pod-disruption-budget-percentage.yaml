@@ -4,8 +4,7 @@ metadata:
   name: sample-pod-disruption-budget-percentage
 spec:
   minAvailable: 90%
-  # または
-  # maxUnavailable: 10%
+  maxUnavailable: 10%
   selector:
     matchLabels:
       app: sample-app

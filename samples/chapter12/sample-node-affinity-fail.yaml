@@ -19,7 +19,7 @@ spec:
           - key: kubernetes.io/hostname
             operator: In
             values:
-            - gke-k8s-default-pool-9c2aa160-d2pl
+            - gke-k8s-default-pool-c110c2c4-ckp9
   containers:
   - name: nginx-container
-    image: nginx:1.16
+    image: nginx:1.12

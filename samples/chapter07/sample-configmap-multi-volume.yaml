@@ -4,12 +4,12 @@ metadata:
   name: sample-configmap-multi-volume
 spec:
   containers:
-  - name: configmap-container
-    image: nginx:1.16
-    volumeMounts:
-    - name: config-volume
-      mountPath: /config
+    - name: configmap-container
+      image: nginx:1.12
+      volumeMounts:
+      - name: config-volume
+        mountPath: /config
   volumes:
-  - name: config-volume
-    configMap:
-      name: sample-configmap
+    - name: config-volume
+      configMap:
+        name: sample-configmap

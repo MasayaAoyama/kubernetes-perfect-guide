@@ -4,7 +4,7 @@ metadata:
   name: sample-2pod-fail
 spec:
   containers:
-  - name: nginx-container-112
-    image: nginx:1.16
-  - name: nginx-container-113
-    image: nginx:1.17
+    - name: nginx-container-112
+      image: nginx:1.12
+    - name: nginx-container-113
+      image: nginx:1.13

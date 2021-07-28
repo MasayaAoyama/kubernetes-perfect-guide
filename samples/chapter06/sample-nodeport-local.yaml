@@ -6,10 +6,10 @@ spec:
   type: NodePort
   externalTrafficPolicy: Local
   ports:
-  - name: "http-port"
-    protocol: "TCP"
-    port: 8080
-    targetPort: 80
-    nodePort: 30081
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8080
+      targetPort: 80
+      nodePort: 30081
   selector:
     app: sample-app

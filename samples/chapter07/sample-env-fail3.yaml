@@ -6,12 +6,12 @@ metadata:
     app: sample-app
 spec:
   containers:
-  - name: nginx-container
-    image: nginx:1.16
-    command: ["echo"]
-    args: ["$(K8S_NODE)", "${K8S_NODE}"]
-    env:
-    - name: K8S_NODE
-      valueFrom:
-        fieldRef:
-          fieldPath: spec.nodeName
+    - name: nginx-container
+      image: nginx:1.12
+      command: ["echo"]
+      args: ["$(K8S_NODE)", "${K8S_NODE}"]
+      env:
+      - name: K8S_NODE
+        valueFrom:
+          fieldRef:
+            fieldPath: spec.nodeName

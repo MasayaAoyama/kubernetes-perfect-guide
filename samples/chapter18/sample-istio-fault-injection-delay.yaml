@@ -12,6 +12,5 @@ spec:
         subset: v1
     fault:
       delay:
-        percentage:
-          value: 50
+        percent: 50
         fixedDelay: 2.000s

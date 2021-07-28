@@ -1,0 +1,18 @@
+apiVersion: servicecatalog.k8s.io/v1beta1
+kind: ServiceInstance
+metadata:
+  name: sample-cloudsql-si
+  namespace: default
+spec:
+  clusterServiceClassExternalName: cloud-sql-mysql
+  clusterServicePlanExternalName: beta
+  parameters:
+    instanceId: sample-cloudsql
+    databaseVersion: MYSQL_5_7
+    region: asia-northeast1
+    settings:
+      tier: db-f1-micro
+      dataDiskSizeGb: "15"
+      dataDiskType: PD_HDD
+      locationPreference:
+        zone: asia-northeast1-a

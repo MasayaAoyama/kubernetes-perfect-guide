@@ -4,10 +4,10 @@ metadata:
   name: sample-qos-burstable
 spec:
   containers:
-  - name: nginx-container
-    image: nginx:1.16
-    resources:
-      requests:
-        cpu: "250m"
-      limits:
-        cpu: "500m"
+    - name: nginx-container
+      image: nginx:1.12
+      resources:
+        requests:
+          cpu: "250m"
+        limits:
+          cpu: "500m"

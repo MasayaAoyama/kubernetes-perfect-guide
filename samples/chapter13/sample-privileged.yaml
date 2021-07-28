@@ -4,7 +4,9 @@ metadata:
   name: sample-privileged
 spec:
   containers:
-  - name: nginx-container
-    image: nginx:1.16
-    securityContext:
-      privileged: true
+    - name: nginx-container
+      image: nginx:1.12
+      ports:
+      - containerPort: 80
+      securityContext:
+        privileged: true

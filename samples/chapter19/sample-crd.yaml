@@ -1,10 +1,15 @@
-apiVersion: apiextensions.k8s.io/v1
+apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
   name: databases.stable.example.com
 spec:
   group: stable.example.com
-  # Namespaceごとのリソースかクラスタ横断のリソースか
+  versions:
+    - name: v1
+      served: true
+      storage: true
+  # 네임스페이스별 리소스인지 클러스터 리스스인지
+  version: v1
   scope: Namespaced
   names:
     plural: databases
@@ -12,37 +17,30 @@ spec:
     kind: Database
     shortNames:
     - db
-  versions:
-  - name: v1
-    served: true
-    storage: true
-    # 各フィールドのバリデーションを設定
-    schema:
-      openAPIV3Schema:
-        type: object
-        properties:
-          spec:
-            type: object
-            properties:
-              dbType:
-                type: string
-                pattern: '^(mysql|mariadb|postgresql)$'
-                default: mysql
-              diskSize:
-                type: integer
-                minimum: 10
-                maximum: 1000
-                default: 20
-    #「kubectl get」実行時に表示するカラムの設定
-    additionalPrinterColumns:
-    - name: Type
-      type: string
-      description: Database type (mysql|mariadb|postgresql)
-      jsonPath: .spec.dbType
-    - name: DiskSize
-      type: integer
-      description: Database disk size
-      jsonPath: .spec.diskSize
-    - name: Age
-      type: date
-      jsonPath: .metadata.creationTimestamp
+  # 각 필드의 벨리데이션 설정
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          properties:
+            dbType:
+              type: string
+              pattern: '^(mysql|mariadb|postgresql)$'
+            diskSize:
+              type: integer
+              minimum: 10
+              maximum: 1000
+  #[kubectl get] 실생시에 표시할 컬럼 설정
+  additionalPrinterColumns:
+  - name: Type
+    type: string
+    description: Database type (mysql|mariadb|postgresql)
+    JSONPath: .spec.dbType
+  - name: DiskSize
+    type: integer
+    description: Database disk size
+    JSONPath: .spec.diskSize
+  - name: Age
+    type: date
+    JSONPath: .metadata.creationTimestamp
+

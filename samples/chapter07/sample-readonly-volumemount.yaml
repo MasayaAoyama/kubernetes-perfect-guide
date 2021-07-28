@@ -4,7 +4,7 @@ metadata:
   name: sample-readonly-volumemount
 spec:
   containers:
-  - image: nginx:1.16
+  - image: nginx:1.12
     name: nginx-container
     volumeMounts:
     - mountPath: /srv

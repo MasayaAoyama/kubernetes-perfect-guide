@@ -2,21 +2,21 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: sample-networkpolicy
-  namespace: default # NetworkPolicyを作成するNamespaceを指定
+  namespace: default # 보안 정책을 생성할 네임스페이스 지정
 spec:
   podSelector:
-    # 設定する対象のPodをここに書く
-    # ラベルセレクタなので、複数のPodを対象にできる
+    # 설정할 대상 파드를 여기에 기입
+    # 레이블 셀렉터이므로 복수의 파드를 대상으로 할 수 있음.
   policyTypes:
-  - Ingress # Ingressルールを作成する場合明示
-  - Egress # Egressルールを作成する場合明示
+  - Ingress # 인그레이스 룰을 생성하는 경우 명시
+  - Egress # 이그레스 룰을 생성할 경우 명시
   ingress:
   - from:
-      # Ingressルールをここに書く（Egressルールと形式は同じ）
+      # 인그레스 룰을 여기에 기입(이그레스 룰과 형식은 동일）
     ports:
-      # このIngressルールで許可する受信Port番号とプロトコルを書く
+      # 이 인그레스 룰로 허가할 수신 포트 번호와 프로토콜 기입
   egress:
   - to:
-      # Egressルールをここに書く（Ingressルールと形式は同じ）
+      # 이그레스 룰을 여기에 기입(인그레스 룰과 형식은 동일）
     ports:
-      # このEgressルールで許可する宛先Port番号とプロトコルを書く
+      # 이 이그레스 룰로 허가할 송신 포트 번호와 프로토콜 기입

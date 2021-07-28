@@ -4,6 +4,6 @@ metadata:
   name: sample-high-priority
 spec:
   containers:
-  - name: nginx-container
-    image: nginx:1.16
+    - name: nginx-container
+      image: nginx:1.12
   priorityClassName: sample-priority-class

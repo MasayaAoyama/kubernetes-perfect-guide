@@ -5,12 +5,12 @@ metadata:
 spec:
   type: ClusterIP
   externalIPs:
-  - 10.240.0.7
-  - 10.240.0.8
+    - 10.178.0.11
+    - 10.178.0.12
   ports:
-  - name: "http-port"
-    protocol: "TCP"
-    port: 8080
-    targetPort: 80
+    - name: "http-port"
+      protocol: "TCP"
+      port: 8080
+      targetPort: 80
   selector:
     app: sample-app

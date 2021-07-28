@@ -4,8 +4,8 @@ metadata:
   name: sample-hostaliases
 spec:
   containers:
-  - name: nginx-container
-    image: nginx:1.16
+    - name: nginx-container
+      image: nginx:1.12
   hostAliases:
   - ip: 8.8.8.8
     hostnames:

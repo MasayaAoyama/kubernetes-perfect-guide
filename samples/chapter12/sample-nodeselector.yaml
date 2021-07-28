@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
   - name: nginx-container
-    image: nginx:1.16
+    image: nginx:1.12
   nodeSelector:
     disktype: ssd

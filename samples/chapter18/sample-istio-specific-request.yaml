@@ -12,8 +12,8 @@ spec:
         subset: v2
     match:
     - headers:
-        end-user:
-          exact: test
+        cookie:
+          regex: ^(.*?;)?(user=test)(;.*)?$
   - route:
     - destination:
         host: reviews

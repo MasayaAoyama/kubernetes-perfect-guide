@@ -6,16 +6,16 @@ metadata:
     app: sample-app
 spec:
   containers:
-  - name: nginx-container
-    image: nginx:1.16
-    env:
-    - name: CPU_REQUESTS
-      valueFrom:
-        resourceFieldRef:
-          containerName: nginx-container
-          resource: requests.cpu
-    - name: CPU_LIMITS
-      valueFrom:
-        resourceFieldRef:
-          containerName: nginx-container
-          resource: limits.cpu
+    - name: nginx-container
+      image: nginx:1.12
+      env:
+        - name: CPU_REQUESTS
+          valueFrom:
+            resourceFieldRef:
+              containerName: nginx-container
+              resource: requests.cpu
+        - name: CPU_LIMITS
+          valueFrom:
+            resourceFieldRef:
+              containerName: nginx-container
+              resource: limits.cpu
