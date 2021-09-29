@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample-cloudsql-app
+  namespace: default
+spec:
+  containers:
+    - name: mysql-cli
+      image: mysql
+      command: ["sleep", "86400"]
+    - name: cloudsql-proxy
+      image: gcr.io/cloudsql-docker/gce-proxy:1.11
+      env:
+        - name: CONNECTION_NAME
+          valueFrom:
+            secretKeyRef:
+              name: sample-cloudsql-credential
+              key: connectionName
+      command: ["/cloud_sql_proxy",
+                "-instances=$(CONNECTION_NAME)=tcp:3306",
+                "-credential_file=/secrets/cloudsql/privateKeyData"]
+      volumeMounts:
+        - name: sample-iam-credential-vol
+          mountPath: /secrets/cloudsql
+          readOnly: true
+  volumes:
+    - name: sample-iam-credential-vol
+      secret:
+        secretName: sample-iam-credential

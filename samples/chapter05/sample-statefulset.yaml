@@ -14,11 +14,13 @@ spec:
         app: sample-app
     spec:
       containers:
-      - name: nginx-container
-        image: nginx:1.16
-        volumeMounts:
-        - name: www
-          mountPath: /usr/share/nginx/html
+        - name: nginx-container
+          image: nginx:1.12
+          ports:
+            - containerPort: 80
+          volumeMounts:
+          - name: www
+            mountPath: /usr/share/nginx/html
   volumeClaimTemplates:
   - metadata:
       name: www

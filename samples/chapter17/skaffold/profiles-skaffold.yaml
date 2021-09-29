@@ -1,33 +1,32 @@
-apiVersion: skaffold/v2alpha3
+apiVersion: skaffold/v1alpha2
 kind: Config
 build:
-  # ビルドしたDockerイメージの保存先とイメージ名
   artifacts:
-  - image: DOCKERHUB_USER/sample-skaffold
-    docker:
-      dockerfile: ./Dockerfile
-  tagPolicy:
-    dateTime: {}
-profiles:
-# GKE環境に本番用のマニフェストを使用するプロファイル
-- name: prdProfile
-  build:
-    local:
-      push: true # イメージのプッシュを行う
-  deploy:
-    kubeContext: gke_PROJECT_asia-northeast1-a_k8s
-    kubectl:
-      manifests:
-      # 適用するマニフェストのファイル名
+  # 빌드한 도커 이미지 저장소와 이미지명
+  - imageName: DOCKERHUB_USER/skaffold-sample
+deploy:
+  kubectl:
+    # kubectl 실행시 --context 옵션을 전달하고 GKE 환경을 사용
+    # (미지정 시에는 현재 Context를 사용)
+    # flags:
+    #   global:
+    #     - --context=gke_PROJECT_asia-northeast3-a_CLUSTER
+    manifests:
+      # 적용할 매니페스트 파일명
       - skaffold-*
-# Docker Desktop環境に開発用のマニフェストを使用するプロファイル
-- name: devProfile
-  build:
-    local:
-      push: false # イメージのプッシュを行わない
-  deploy:
-    kubeContext: docker-desktop
-    kubectl:
-      manifests:
-      # 適用するマニフェストのファイル名
-      - dev-skaffold-*
+profiles:
+  # 로컬 빌드에서 도커 이미지 푸시를 건너뛰고、
+  # Docker for Mac 환경에 개발용 매니페스트를 사용할 프로파일
+  - name: devProfile
+    build:
+      local:
+        skipPush: true
+    deploy:
+      kubectl:
+        flags:
+          global:
+            # kubectl 실행시 --context 옵션을 전달하고,
+            # Docker for Mac 환경을 사용
+            - --context=docker-for-desktop
+        manifests:
+          - dev-skaffold-*

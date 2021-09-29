@@ -13,10 +13,16 @@ spec:
     spec:
       completions: 1
       parallelism: 1
-      backoffLimit: 0
+      backoffLimit: 1
       template:
         spec:
           containers:
-          - name: tools-container
-            image: amsy810/random-exit:v2.0
+          - name: sleep-container
+            image: centos:6
+            command:
+            - "sh"
+            - "-c"
+            args:
+            # 약 50% 확률로 성공하는 명령어
+            - "sleep 40; date +'%N' | cut -c 9 | egrep '[1|3|5|7|9]'"
           restartPolicy: Never

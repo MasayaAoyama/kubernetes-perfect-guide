@@ -1,44 +1,32 @@
-# 『Kubernetes完全ガイド（第二版）』 付録マニフェストのリポジトリ
+# <쿠버네티스 완벽 가이드> 소스코드
 
-はじめまして。
-青山真也（[@amsy810](https://twitter.com/@amsy810)）と申します。
+<쿠버네티스 완벽 가이드> 소스 코드입니다.
 
-この度は『Kubernetes完全ガイド（ `第二版` ）』を選んで頂き、誠にありがとうございます。
-（このリポジトリへのStarもお待ちしております。）
+---
 
-電子書籍に関しては、Amazon以外からもPDFなどで入手可能です。
-* Amazon: https://www.amazon.co.jp/dp/4295009792
-* Impress: https://book.impress.co.jp/books/1119101148
-* その他いくつかのサイト
+쿠버네티스의 각 기능 소개는 주로 관리형 쿠버네티스 서비스 환경인 GKE 기준으로 설명하지만, 대부분의 기능은 다른 쿠버네티스 환경에서도 동일하게 사용할 수 있습니다.  
+- 쿠버네티스 환경: Google Kubernetes Engine(GKE), 일부는 Kubernetes in Docker(kind) 사용  
+- 쿠버네티스 버전: 1.18.16-gke.2100(kind 환경은 1.18.15)  
+- kubectl 버전: 1.18.16  
 
+<br>
 
-## （注意）第一版について
-
-こちらのブランチは `第二版` 用です。
-`第一版` に関しては、[1st-edition branch](https://github.com/MasayaAoyama/kubernetes-perfect-guide/tree/1st-edition)を参照してください。
-
-```
-$ git checkout 1st-edition
-```
-
-# Kubernetes perfect guide "2nd edition" - sample manifest repository
-
-Hello, I'm Masaya Aoyama ([@amsy810](https://twitter.com/@amsy810)).
-
-Thank you for choosing "kubernetes perfect guide "2nd edition".
-If you like this repo, please add star :)
-
-You can get E-book and PDF from Amazon or various sites.
-* Amazon: https://www.amazon.co.jp/dp/4295009792
-* Impress: https://book.impress.co.jp/books/1119101148
-* etc
-
-## Note: about 1st edition
-
-This branch is for `2nd edition`.
-For `1st edition`, please refer [1st-edition branch](https://github.com/MasayaAoyama/kubernetes-perfect-guide/tree/1st-edition).
-
-```
-$ git checkout 1st-edition
-```
-
+그 외의 시스템 버전은 다음과 같습니다.   
+- Docker Desktop for Mac/Windows: 2.3.0.5 (이 책은 맥(Mac) 환경을 사용한다.)  
+- Minikube: v1.18.1  
+- kind: v0.10.0  
+- kubeadm: 1.18.15  
+- Rancher: v2.3.5  
+- eksctl: 0.31.0  
+- stern: 1.11.0  
+- Nginx Ingress: 0.44.0  
+- Helm: v3.2.0  
+- Kustomize: v2.0.3 (kubectl 1.18.16에 내장된 것을 사용)  
+- Kubeval: 0.16.1  
+- Conftest: 0.23.0  
+- ArgoCD: v2.0.0  
+- Skaffold: v1.12.0  
+- Telepresence: 1.0.9/2.1.4  
+- Istio: 1.6.0  
+- SealedSecret: v0.12.4  
+- ExternalSecret: 4.0.0  

@@ -6,5 +6,5 @@ metadata:
     key1: value1
 spec:
   containers:
-  - name: nginx-container
-    image: nginx:1.17
+    - name: nginx-container
+      image: nginx:1.13

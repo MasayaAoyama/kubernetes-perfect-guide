@@ -4,8 +4,7 @@ metadata:
   name: sample-pod-disruption-budget
 spec:
   minAvailable: 1
-  # または
-  # maxUnavailable: 1
+  maxUnavailable: 1
   selector:
     matchLabels:
       app: sample-app

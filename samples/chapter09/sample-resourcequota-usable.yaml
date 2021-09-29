@@ -5,13 +5,16 @@ metadata:
   namespace: default
 spec:
   hard:
-    # 合計のRequestsの制限
+    # 합계의 Requests 제한 
+    requests.cpu: 2
     requests.memory: 2Gi
     requests.storage: 5Gi
     sample-storageclass.storageclass.storage.k8s.io/requests.storage: 5Gi
     requests.ephemeral-storage: 5Gi
     requests.nvidia.com/gpu: 2
-    # 合計のLimitsの制限
+
+    # 합계의 Limits 제한
     limits.cpu: 4
+    limits.memory: 4Gi
     limits.ephemeral-storage: 10Gi
     limits.nvidia.com/gpu: 4

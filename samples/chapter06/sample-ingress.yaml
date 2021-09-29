@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: sample-ingress
@@ -7,11 +7,11 @@ spec:
   - host: sample.example.com
     http:
       paths:
-      - path: /path1/
+      - path: /path1/*
         backend:
           serviceName: sample-ingress-svc-1
           servicePort: 8888
-      - path: /path2/
+      - path: /path2/*
         backend:
           serviceName: sample-ingress-svc-2
           servicePort: 8888

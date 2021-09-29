@@ -1,6 +1,6 @@
 ---
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
   name: sample-none-selector
 spec:
@@ -10,14 +10,14 @@ spec:
     port: 8080
     targetPort: 80
 ---
-apiVersion: v1
 kind: Endpoints
+apiVersion: v1
 metadata:
   name: sample-none-selector
 subsets:
-- addresses:
-  - ip: 192.168.1.1
-  - ip: 192.168.1.2
-  ports:
-  - protocol: TCP
-    port: 80
+  - addresses:
+    - ip: 192.168.1.1
+    - ip: 192.168.1.2
+    ports:
+      - protocol: TCP
+        port: 80

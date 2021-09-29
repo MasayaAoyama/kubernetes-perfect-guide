@@ -13,5 +13,7 @@ spec:
         app: abtest
     spec:
       containers:
-      - name: nginx-container
-        image: nginx:1.17
+        - name: nginx-container
+          image: nginx:1.13
+          ports:
+            - containerPort: 80

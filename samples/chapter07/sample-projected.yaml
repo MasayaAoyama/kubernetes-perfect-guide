@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: nginx-container
-    image: nginx:1.16
+    image: nginx:1.12
     volumeMounts:
     - name: projected-volume
       mountPath: /srv
@@ -16,15 +16,15 @@ spec:
       - secret:
           name: sample-db-auth
           items:
-          - key: username
-            path: secret/username.txt
+            - key: username
+              path: secret/username.txt
       - configMap:
           name: sample-configmap
           items:
-          - key: nginx.conf
-            path: configmap/nginx.conf
+            - key: nginx.conf
+              path: configmap/nginx.conf
       - downwardAPI:
           items:
-          - path: "podname"
-            fieldRef:
-              fieldPath: metadata.name
+            - path: "podname"
+              fieldRef:
+                fieldPath: metadata.name

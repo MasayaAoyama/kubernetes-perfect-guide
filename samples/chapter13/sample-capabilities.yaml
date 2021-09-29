@@ -4,9 +4,9 @@ metadata:
   name: sample-capabilities
 spec:
   containers:
-  - name: tools-container
-    image: amsy810/tools:v2.0
-    securityContext:
-      capabilities:
-        add: ["SYS_ADMIN"]
-        drop: ["AUDIT_WRITE"]
+    - name: nginx-container
+      image: masayaaoyama/nginx:capsh
+      securityContext:
+        capabilities:
+          add: ["SYS_ADMIN"]
+          drop: ["AUDIT_WRITE"]

@@ -6,10 +6,10 @@ metadata:
     app: sample-app
 spec:
   containers:
-  - name: nginx-container
-    image: nginx:1.16
-    command: ["echo"]
-    args: ["$(TESTENV)", "$(HOSTNAME)"]
-    env:
-    - name: TESTENV
-      value: "100"
+    - name: nginx-container
+      image: nginx:1.12
+      command: ["echo"]
+      args: ["$(TESTENV)", "$(HOSTNAME)"]
+      env:
+        - name: TESTENV
+          value: "100"

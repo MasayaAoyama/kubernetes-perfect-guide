@@ -4,11 +4,12 @@ metadata:
   name: sample-runuser
 spec:
   securityContext:
-    runAsUser: 65534
-    runAsGroup: 65534
+    runAsUser: 99
+    # runAsGroup: 99
     supplementalGroups:
     - 1001
     - 1002
   containers:
-  - name: tools-container
-    image: amsy810/tools:v2.0
+    - name: centos-container
+      image: centos:7
+      command: ["/bin/sleep", "3600"]

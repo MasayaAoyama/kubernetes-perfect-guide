@@ -15,17 +15,17 @@ spec:
     spec:
       containers:
       - name: sample-pvc
-        image: nginx:1.16
+        image: nginx:1.12
         volumeMounts:
         - name: pvc-template-volume
           mountPath: /tmp
   volumeClaimTemplates:
-  - metadata:
-      name: pvc-template-volume
-    spec:
-      accessModes:
-      - ReadWriteOnce
-      resources:
-        requests:
-          storage: 10Gi
-      storageClassName: sample-storageclass
+    - metadata:
+        name: pvc-template-volume
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10G
+        storageClassName: "sample-storageclass"

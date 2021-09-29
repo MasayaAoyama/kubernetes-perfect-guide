@@ -8,5 +8,6 @@ spec:
     - name: net.core.somaxconn
       value: "12345"
   containers:
-  - name: tools-container
-    image: amsy810/tools:v2.0
+    - name: centos-container
+      image: centos:7
+      command: ["/bin/sleep", "3600"]

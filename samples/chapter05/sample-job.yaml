@@ -9,8 +9,8 @@ spec:
   template:
     spec:
       containers:
-      - name: tools-container
-        image: amsy810/tools:v2.0
+      - name: sleep-container
+        image: centos:6
         command: ["sleep"]
         args: ["60"]
       restartPolicy: Never
