@@ -42,3 +42,7 @@ For `1st edition`, please refer [1st-edition branch](https://github.com/MasayaAo
 $ git checkout 1st-edition
 ```
 
+## Note: about korea edition
+
+This branch is for `2nd edition for Japanese version`.
+For `korea edition`, prease refer [ko/2nd-edition branch](https://github.com/MasayaAoyama/kubernetes-perfect-guide/tree/ko/2nd-edition)
